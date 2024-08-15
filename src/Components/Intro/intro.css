@@ -78,6 +78,7 @@
       ),
       url("../../assests/sohaibCrop.png") no-repeat center center;
     background-size: cover;
+    filter: none;
   }
 
 }
