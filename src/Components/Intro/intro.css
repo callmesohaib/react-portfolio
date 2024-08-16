@@ -78,4 +78,10 @@
     .introPara{
       width: 90vw;
     }
+    .introJob span{
+      font-size: 1.5rem !important;
+    }
+    .introText{
+      font-size: 70%;
+    }
   }
