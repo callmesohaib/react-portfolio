@@ -41,28 +41,28 @@
 }
 
 @media screen and (max-width: 480px) {
-
-    #education{
-        /* align-items: start; */
-    }
+  #education {
+    /* align-items: start; */
+  }
   .eduBar {
     display: flex;
     flex-direction: column;
     width: 80vw;
     padding: 0;
+    margin:2rem auto;
   }
   .eduBars {
     margin: 1.2rem 0;
-
   }
   .eduBarImg {
-    object-fit:fill;
-    width: 20.5rem;
+    object-fit: fill;
+    width: 18rem;
     height: 14rem;
+    margin-right: 0;
+
   }
   .eduBarText {
     margin: 1rem 0;
     text-align: center;
-    
   }
 }
