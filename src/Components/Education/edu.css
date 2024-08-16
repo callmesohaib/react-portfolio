@@ -1,0 +1,42 @@
+#education {
+  overflow: hidden;
+  width: 100vw;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin:  0 auto;
+}
+.eduBars{
+    margin: 1.5rem;
+    width: 100vw;
+    max-width: 80%;
+    text-align: left;
+}
+.eduBar{
+    display: flex;
+    margin: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background:rgb(50, 50, 50);
+    transition: 0.3s ease-in-out;
+}
+
+.eduBarImg{
+    object-fit: cover;
+    height: 8rem;
+    width: 12rem;
+    border-radius: 0.5rem;
+    margin-right: 2rem;
+
+}
+.eduBar:hover{
+    box-shadow: 0 0 10px wheat;
+    transform: scale(1.03);
+}
+.eduBarText p{
+    font-weight: 200;
+    font-size: 1.2rem;
+}

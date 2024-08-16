@@ -25,10 +25,10 @@
   transition: 0.1s ease-in-out;
 }
 
-.desktopMenuListItem:hover{
-    color:var(--secondary-color);
-    padding-bottom: 0.3rem;
-    border-bottom: 3px solid var(--secondary-color);
+.desktopMenuListItem:hover {
+  color: var(--secondary-color);
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--secondary-color);
 }
 .desktopMenuBtn {
   background-color: white;
@@ -46,4 +46,8 @@
 .desktopMenuImg {
   font-size: 1.3rem;
   margin-right: 0.4rem;
+}
+
+@media screen and (max-width: 480px) {
+
 }

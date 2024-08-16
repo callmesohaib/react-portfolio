@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import skillData from '../Json/skill.json';
-import './skill.css'
+import React, { useState, useEffect } from "react";
+import skillData from "../../Json/skill.json";
+import "./skill.css";
 
 const Skill = () => {
   const [skills, setSkills] = useState([]);
@@ -15,13 +15,17 @@ const Skill = () => {
 
   return (
     <section className="skills" id="skills">
-      <h2 className="heading">Skills & <span>Abilities</span></h2>
+      <h2 className="heading">
+        Skills & <span>Abilities</span>
+      </h2>
       <div className="container">
         <div className="row" id="skillsContainer">
           {skills.map((skill, index) => (
-            <div 
-              key={index} 
-              className={`bar ${index >= 6 && !showMore ? 'hidden' : 'visible'}`}
+            <div
+              key={index}
+              className={`bar ${
+                index >= 6 && !showMore ? "hidden" : "visible"
+              }`}
             >
               <div className="info">
                 <img src={skill.icon} alt="skill" />
