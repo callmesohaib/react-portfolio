@@ -1,11 +1,12 @@
 .navbar {
   height: 5rem;
   width: 100vw;
-  max-width: 75rem;
   margin: 0rem auto;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  background-color: rgba(245, 222, 179, 0.199);
+  backdrop-filter: blur(10px);
   justify-content: space-between;
   position: sticky;
   top: 0;

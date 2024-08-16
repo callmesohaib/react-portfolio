@@ -18,3 +18,7 @@ body{
 :root{
     --secondary-color: #fbb808;
 }
+.heading {
+    font-size: 3rem;
+    text-align: center;
+  }
