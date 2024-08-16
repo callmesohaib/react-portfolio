@@ -56,7 +56,7 @@
   }
   .eduBarImg {
     object-fit: fill;
-    width: 18rem;
+    width: 100%;
     height: 14rem;
     margin-right: 0;
 
