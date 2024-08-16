@@ -10,9 +10,8 @@
   margin: 0 auto;
 }
 .eduBars {
-  margin: 1.5rem;
   width: 100vw;
-  max-width: 80%;
+  max-width: 90%;
   text-align: left;
 }
 .eduBar {
@@ -48,7 +47,6 @@
     width: 90vw;
     padding: 0;
     margin:2rem 0;
-    margin-left: -1.2rem;
   }
   .eduBars {
     margin: 1.2rem 0;
