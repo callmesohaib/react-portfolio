@@ -7,7 +7,9 @@ import uni from "../../assests/uet.jpg";
 const Education = () => {
   return (
     <section id="education">
-      <h2 className="heading">Education</h2>
+      <h2 className="heading" style={{ color: "white" }}>
+        Education
+      </h2>
 
       <div className="eduBars">
         <div className="eduBar">
@@ -16,7 +18,6 @@ const Education = () => {
             <h3>Bab-e-Arqam Model High School</h3>
             <p>Science</p>
             <h4>2018 - 2020</h4>
-
           </div>
         </div>
         <div className="eduBar">

@@ -5,6 +5,7 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+  margin-bottom: 2rem;
 }
 .bg {
   position: absolute;
