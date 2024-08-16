@@ -75,4 +75,7 @@
       content: url(../../assests/DullSohaib.png);
       filter: none;
     }
+    .introPara{
+      width: 80%;
+    }
   }
