@@ -7,36 +7,62 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin:  0 auto;
+  margin: 0 auto;
 }
-.eduBars{
-    margin: 1.5rem;
-    width: 100vw;
-    max-width: 80%;
-    text-align: left;
+.eduBars {
+  margin: 1.5rem;
+  width: 100vw;
+  max-width: 80%;
+  text-align: left;
 }
-.eduBar{
+.eduBar {
+  display: flex;
+  margin: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: rgb(50, 50, 50);
+  transition: 0.3s ease-in-out;
+}
+
+.eduBarImg {
+  object-fit: cover;
+  height: 8rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+}
+.eduBar:hover {
+  box-shadow: 0 0 10px wheat;
+  transform: scale(1.03);
+}
+.eduBarText p {
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 480px) {
+
+    #education{
+        /* align-items: start; */
+    }
+  .eduBar {
     display: flex;
-    margin: 1rem;
-    padding: 1.5rem 2rem;
-    border-radius: 0.5rem;
-    background:rgb(50, 50, 50);
-    transition: 0.3s ease-in-out;
-}
+    flex-direction: column;
+    width: 80vw;
+    padding: 0;
+  }
+  .eduBars {
+    margin: 1.2rem 0;
 
-.eduBarImg{
-    object-fit: cover;
-    height: 8rem;
-    width: 12rem;
-    border-radius: 0.5rem;
-    margin-right: 2rem;
-
-}
-.eduBar:hover{
-    box-shadow: 0 0 10px wheat;
-    transform: scale(1.03);
-}
-.eduBarText p{
-    font-weight: 200;
-    font-size: 1.2rem;
+  }
+  .eduBarImg {
+    object-fit:fill;
+    width: 20.5rem;
+    height: 14rem;
+  }
+  .eduBarText {
+    margin: 1rem 0;
+    text-align: center;
+    
+  }
 }
