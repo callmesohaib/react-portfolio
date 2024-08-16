@@ -41,15 +41,14 @@
 }
 
 @media screen and (max-width: 480px) {
-  #education {
-    /* align-items: start; */
-  }
+
   .eduBar {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 90vw;
     padding: 0;
-    margin:2rem auto;
+    margin:2rem 0;
+    margin-left: -1.2rem;
   }
   .eduBars {
     margin: 1.2rem 0;
