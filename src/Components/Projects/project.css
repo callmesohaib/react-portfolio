@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   width: 80vw;
-  margin: 0 auto;
+  margin: 2rem auto;
+
 }
 
 .main-section {
@@ -104,7 +105,6 @@
 
 @media (max-width: 895px) {
   .main-section {
-    margin-left: 4rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     margin-bottom: 5rem;
@@ -139,10 +139,9 @@
     width: 45%;
     margin-bottom: 5rem;
   }
-  /* .project-box {
-    position: relative;
-    left: -5%;
-  } */
+  .project-box {
+    margin: 0 auto;
+  }
   .project-box:hover .desc {
     transform: translateY(25%);
   }
