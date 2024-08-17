@@ -2,6 +2,7 @@
   min-height: calc(100vh - 5rem);
   background: linear-gradient(to bottom, var(--secondary-color), black);
 }
+
 .heading {
   color: black;
 }
@@ -16,25 +17,26 @@
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
+
 .skills .container .row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .skills .container .bar {
-  padding-bottom:10px;
+  padding-bottom: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: black;
   transition: 0.2s;
 }
-.skills .container .bar.hidden {
-  display: block;
-}
+
 .skills .container .bar:hover {
   box-shadow: 0 0px 25px wheat !important;
 }
+
 .skills .container .bar .info {
   display: flex;
   flex-direction: column;
@@ -42,18 +44,34 @@
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .skills .container .bar .info img {
   height: 50px;
 }
+
 .skills .container .bar .info span {
   font-size: 1rem;
   font-weight: 500;
 }
-.container .skill-show,
-.container a .skill-less {
-  display: none;
+
+.container .skill-show {
+  display: block;
   color: black;
   background-color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container .skill-less {
+  display: block;
+  color: black;
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 @media (max-width: 895px) {
@@ -103,13 +121,14 @@
     text-align: center;
     bottom: 15px;
     width: 55%;
-
   }
-  .container a .skill-less {
+
+  .container .skill-less {
+    display: block;
     position: relative;
     text-align: center;
     bottom: 15px;
-    color: black;
-    display: none;
+    left: -10px;
+    width: 120%;
   }
 }
