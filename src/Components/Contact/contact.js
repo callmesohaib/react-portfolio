@@ -22,7 +22,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Show a loading toast notification immediately
     const toastId = toast.loading("Sending message...");
 
     fetch("https://api.web3forms.com/submit", {
@@ -97,6 +96,8 @@ const Contact = () => {
               value={formData.phone}
               onChange={handleChange}
               required
+              pattern="[0-9]*"
+              inputMode="numeric"
             />
             <input
               type="text"
