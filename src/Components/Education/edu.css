@@ -48,8 +48,9 @@
     padding: 0;
     margin: 2rem 0;
   }
+
   .eduBars {
-    margin: 1.2rem auto;
+    margin: -1rem auto;
   }
   .eduBarImg {
     object-fit: fill;
