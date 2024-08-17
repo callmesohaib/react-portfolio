@@ -90,4 +90,7 @@ font-size: 2rem;
   .desktopMenu{
     display: none;
   }
+  .desktopMenuBtn{
+    display: none;
+  }
 }
