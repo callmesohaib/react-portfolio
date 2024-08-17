@@ -1,6 +1,6 @@
 .skills {
   min-height: calc(100vh - 5rem);
-  background: linear-gradient(to bottom, var(--secondary-color), black);
+  background: linear-gradient(to bottom, var(--secondary-color), rgb(30,30,30));
 }
 
 .heading {
