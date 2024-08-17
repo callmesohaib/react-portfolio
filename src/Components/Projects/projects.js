@@ -4,10 +4,12 @@ import "./project.css";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
+  const [visibleProjects, setVisibleProjects] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     setProjects(projectData);
+    setVisibleProjects(projectData.slice(0, 4));
   }, []);
 
   const importAll = (r) => {
@@ -21,11 +23,14 @@ const Project = () => {
     require.context("../../ProjectImages", false, /\.(png|jpe?g|svg)$/)
   );
 
-  const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
-
   const renderProjects = () => {
     return visibleProjects.map((project, index) => (
-      <div key={index} className="project-box visible">
+      <div
+        key={index}
+        className={`project-box ${
+          !isExpanded && index >= 4 ? "fade-out" : "fade-in"
+        }`}
+      >
         <div className="img">
           <img src={images[project.img]} alt={project.title} />
         </div>
@@ -45,9 +50,29 @@ const Project = () => {
     ));
   };
 
+  const handleShowMore = () => {
+    setIsExpanded(true);
+    const remainingProjects = projects.slice(4);
+
+    remainingProjects.forEach((project, index) => {
+      setTimeout(() => {
+        setVisibleProjects((prevVisibleProjects) => [
+          ...prevVisibleProjects,
+          project,
+        ]);
+      }, index * 300);
+    });
+  };
+
+  const handleShowLess = () => {
+    setIsExpanded(false);
+    setVisibleProjects(projects.slice(0, 4));
+    scrollToProjectSection();
+  };
+
   const scrollToProjectSection = () => {
     const projectSection = document.getElementById("project");
-    const offset = -80; // Adjust this based on the height of any fixed header
+    const offset = -80;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = projectSection.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -57,13 +82,6 @@ const Project = () => {
       top: offsetPosition,
       behavior: "smooth",
     });
-  };
-
-  const handleShowMore = () => setIsExpanded(true);
-
-  const handleShowLess = () => {
-    setIsExpanded(false);
-    scrollToProjectSection();
   };
 
   return (
