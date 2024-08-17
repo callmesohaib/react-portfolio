@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css"; 
+import "./footer.css";
 
 const Footer = () => {
   return (
@@ -29,9 +29,7 @@ const Footer = () => {
           <a href="#contact">Contact</a>
         </li>
       </ul>
-      <p className="copyright">
-        &copy; Sohaib Ikram | All Rights Reserved
-      </p>
+      <p className="copyright">&copy; Sohaib Ikram | All Rights Reserved</p>
     </footer>
   );
 };
