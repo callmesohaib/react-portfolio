@@ -143,8 +143,8 @@
 
   }
   .project-box {
-    margin: 0 auto;
-    width: 100%;
+    /* margin: 0 auto; */
+    width: 115%;
   }
   .project-box:hover .desc {
     transform: translateY(25%);
