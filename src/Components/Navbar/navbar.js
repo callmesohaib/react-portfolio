@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link className="desktopMenuListItem">Home</Link>
         <Link className="desktopMenuListItem">Education</Link>
         <Link className="desktopMenuListItem">Skills</Link>
-        <Link className="desktopMenuListItem">Client</Link>
+        <Link className="desktopMenuListItem">Projects</Link>
       </div>
       <button className="desktopMenuBtn">
       <i className='bx bx-message-rounded desktopMenuImg'></i>

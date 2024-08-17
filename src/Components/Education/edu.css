@@ -40,13 +40,12 @@
 }
 
 @media screen and (max-width: 480px) {
-
   .eduBar {
     display: flex;
     flex-direction: column;
     width: 90vw;
     padding: 0;
-    margin:2rem 0;
+    margin: 2rem 0;
   }
   .eduBars {
     margin: 1.2rem 0;
@@ -56,7 +55,6 @@
     width: 100%;
     height: 14rem;
     margin-right: 0;
-
   }
   .eduBarText {
     margin: 1rem 1.5rem;
