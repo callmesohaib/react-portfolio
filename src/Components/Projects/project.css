@@ -129,20 +129,20 @@
     width: 30%;
     height: 30px;
     font-size: 0.7rem;
-    top:4.8rem;
+    top: 4.8rem;
     text-align: center;
     left: 35%;
     border-radius: 6px;
   }
   .project .show,
   .project last-child {
-    width: 40%;
+    width: 45%;
     margin-bottom: 5rem;
   }
-  .project-box {
+  /* .project-box {
     position: relative;
     left: -5%;
-  }
+  } */
   .project-box:hover .desc {
     transform: translateY(25%);
   }
