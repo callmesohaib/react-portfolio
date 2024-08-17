@@ -52,16 +52,16 @@
   font-size: 1.3rem;
   margin-right: 0.4rem;
 }
-.mobMenu{
+.mobMenu {
   display: none;
-color: var(--secondary-color);
-font-size: 2rem;
+  color: var(--secondary-color);
+  font-size: 2rem;
 }
 
 .navMenu {
   position: absolute;
-  top: 4rem;
-  right: 2rem;
+  top: 5rem;
+  right: 0rem;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -83,14 +83,18 @@ font-size: 2rem;
 @media screen and (max-width: 480px) {
 }
 
-@media screen and (max-width:720px){
-  .mobMenu{
+@media screen and (max-width: 720px) {
+  .mobMenu {
     display: flex;
+    margin-right: -1rem;
   }
-  .desktopMenu{
+  .desktopMenu {
     display: none;
   }
-  .desktopMenuBtn{
+  .desktopMenuBtn {
     display: none;
+  }
+  .logo {
+    margin-left: -4rem;
   }
 }
