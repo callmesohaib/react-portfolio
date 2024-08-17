@@ -96,6 +96,7 @@
   display: none;
   margin-top: 2rem;
   color: black;
+  cursor: pointer;
   background-color: var(--secondary-color);
 }
 .btn:hover {

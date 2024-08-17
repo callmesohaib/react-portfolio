@@ -1,6 +1,10 @@
 .skills {
   min-height: calc(100vh - 5rem);
-  background: linear-gradient(to bottom, var(--secondary-color), rgb(30, 30, 30));
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-color),
+    rgb(30, 30, 30)
+  );
 }
 
 .heading {
@@ -102,7 +106,7 @@
 
   .container .skill-show,
   .container .skill-less {
-    display: block; 
+    display: block;
     position: relative;
     text-align: center;
     bottom: 15px;
@@ -113,6 +117,6 @@
 
   .container .skill-less {
     left: -10px;
-    width: 120%;
+    width: 50%;
   }
 }

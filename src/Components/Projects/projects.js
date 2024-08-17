@@ -45,6 +45,27 @@ const Project = () => {
     ));
   };
 
+  const scrollToProjectSection = () => {
+    const projectSection = document.getElementById("project");
+    const offset = -80; // Adjust this based on the height of any fixed header
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = projectSection.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition + offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const handleShowMore = () => setIsExpanded(true);
+
+  const handleShowLess = () => {
+    setIsExpanded(false);
+    scrollToProjectSection();
+  };
+
   return (
     <section className="project" id="project">
       <h2 className="heading" style={{ color: "white" }}>
@@ -55,22 +76,20 @@ const Project = () => {
       </div>
       <div
         className="btn show"
-        onClick={() => setIsExpanded(true)}
+        onClick={handleShowMore}
         style={{
           display: isExpanded || projects.length <= 4 ? "none" : "block",
         }}
       >
         Show more
       </div>
-      <a href="#project">
-        <div
-          className="btn less"
-          onClick={() => setIsExpanded(false)}
-          style={{ display: isExpanded ? "block" : "none" }}
-        >
-          Show less
-        </div>
-      </a>
+      <div
+        className="btn less"
+        onClick={handleShowLess}
+        style={{ display: isExpanded ? "block" : "none" }}
+      >
+        Show less
+      </div>
     </section>
   );
 };

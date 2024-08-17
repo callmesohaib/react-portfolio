@@ -11,7 +11,25 @@ const Skill = () => {
   }, []);
 
   const showMoreSkills = () => setShowMore(true);
-  const showLessSkills = () => setShowMore(false);
+
+  const showLessSkills = () => {
+    setShowMore(false);
+    scrollToSkillsSection();
+  };
+
+  const scrollToSkillsSection = () => {
+    const skillsSection = document.getElementById("skills");
+    const offset = -80;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = skillsSection.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition + offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="skills" id="skills">
@@ -39,11 +57,9 @@ const Skill = () => {
             Show more
           </div>
         ) : (
-          <a href="#skills">
-            <div className="btn skill-less" onClick={showLessSkills}>
-              Show less
-            </div>
-          </a>
+          <div className="btn skill-less" onClick={showLessSkills}>
+            Show less
+          </div>
         )}
       </div>
     </section>
