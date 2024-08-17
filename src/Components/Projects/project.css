@@ -118,7 +118,7 @@
     font-size: 1rem;
   }
   .desc p {
-    margin-top: 2rem;
+    margin-top: 10px;
     font-size: 0.6rem;
   }
 
@@ -129,7 +129,7 @@
     width: 30%;
     height: 30px;
     font-size: 0.7rem;
-    top: 10rem;
+    top:4.8rem;
     text-align: center;
     left: 35%;
     border-radius: 6px;
