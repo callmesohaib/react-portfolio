@@ -18,14 +18,38 @@ const Contact = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevents the default form submission behavior
+
+    // Submit the form data using the form's action attribute
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(e.target),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success:", result);
+        // Clear the form inputs
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          desc: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   return (
     <section className="contact" id="contact">
       <h2 className="heading">
         Contact <span>Me</span>
       </h2>
       <form
-        action="https://api.web3forms.com/submit"
-        method="POST"
+        onSubmit={handleSubmit}
         autoComplete="off"
       >
         <input

@@ -31,6 +31,12 @@
   margin: 1rem 0;
   resize: none;
 }
+.contact form .input-group-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .contact form .btn {
   margin-top: 2rem;
@@ -44,12 +50,5 @@
   }
   .contact form textarea {
     margin-top: -2rem;
-  }
-
-  .contact form .input-group-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
