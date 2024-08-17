@@ -1,6 +1,6 @@
 .skills {
   min-height: calc(100vh - 5rem);
-  background: linear-gradient(to bottom, var(--secondary-color), rgb(30,30,30));
+  background: linear-gradient(to bottom, var(--secondary-color), rgb(30, 30, 30));
 }
 
 .heading {
@@ -54,24 +54,9 @@
   font-weight: 500;
 }
 
-.container .skill-show {
-  display: block;
-  color: black;
-  background-color: var(--secondary-color);
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
+.container .skill-show,
 .container .skill-less {
-  display: block;
-  color: black;
-  background-color: var(--secondary-color);
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
+  display: none; /* Hide the buttons by default */
 }
 
 @media (max-width: 895px) {
@@ -115,19 +100,18 @@
     display: none;
   }
 
-  .container .skill-show {
-    display: block;
+  .container .skill-show,
+  .container .skill-less {
+    display: block; 
     position: relative;
     text-align: center;
     bottom: 15px;
     width: 55%;
+    color: black;
+    background-color: var(--secondary-color);
   }
 
   .container .skill-less {
-    display: block;
-    position: relative;
-    text-align: center;
-    bottom: 15px;
     left: -10px;
     width: 120%;
   }
