@@ -135,7 +135,8 @@
   }
   .project .show,
   .project last-child {
-    width: 55%;
+    font-size: 0.7rem;
+    width: 50%;
   }
   .project-box {
     margin: 0 auto;
