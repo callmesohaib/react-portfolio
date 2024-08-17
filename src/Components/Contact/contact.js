@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,17 +20,23 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the default form submission behavior
+    e.preventDefault();
 
-    // Submit the form data using the form's action attribute
+    // Show a loading toast notification immediately
+    const toastId = toast.loading("Sending message...");
+
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: new FormData(e.target),
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("Success:", result);
-        // Clear the form inputs
+        toast.update(toastId, {
+          render: "Message sent successfully!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
         setFormData({
           name: "",
           email: "",
@@ -39,7 +46,12 @@ const Contact = () => {
         });
       })
       .catch((error) => {
-        console.error("Error:", error);
+        toast.update(toastId, {
+          render: "Message not sent successfully!",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
       });
   };
 
@@ -48,10 +60,7 @@ const Contact = () => {
       <h2 className="heading">
         Contact <span>Me</span>
       </h2>
-      <form
-        onSubmit={handleSubmit}
-        autoComplete="off"
-      >
+      <form onSubmit={handleSubmit} autoComplete="off">
         <input
           type="hidden"
           name="access_key"
