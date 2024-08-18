@@ -29,29 +29,8 @@
   color: white;
   background-color: var(--secondary-color);
 }
-.footer ul {
-  margin-top: 0;
-  padding: 0;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 0;
-  text-align: center;
-}
-.list a {
-  color: white;
-  font-weight: 600;
-  transition: 0.2s ease-in-out;
-}
-.footer ul li a:hover {
-  border-bottom: 3px solid var(--secondary-color);
-  color: var(--secondary-color);
-}
-.footer ul li {
-  display: inline-block;
-  padding: 0 10px;
-}
+
 .footer .copyright {
-  margin-top: 30px;
   text-align: center;
   font-size: 16px;
   font-weight: 600;

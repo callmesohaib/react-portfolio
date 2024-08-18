@@ -18,17 +18,6 @@ const Footer = () => {
           <i className="bx bxl-facebook-circle"></i>
         </a>
       </div>
-      <ul className="list">
-        <li>
-          <a href="#project">Projects</a>
-        </li>
-        <li>
-          <a href="#home">About Me</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
       <p className="copyright">&copy; Sohaib Ikram | All Rights Reserved</p>
     </footer>
   );
