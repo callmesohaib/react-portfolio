@@ -96,4 +96,13 @@
   .introText {
     font-size: 70%;
   }
+  .btn,
+  .Resume {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+  .bx-right-arrow-alt,
+  .cv {
+    font-size: 1rem;
+  }
 }
