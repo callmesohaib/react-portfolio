@@ -3,6 +3,7 @@ import "./intro.css";
 import bg from "../../assests/sohaibCrop.png";
 import { Link } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
+import CV from "../../CV.pdf";
 
 const Intro = () => {
   return (
@@ -36,13 +37,25 @@ const Intro = () => {
           for solving complex problems and a love for crafting elegant and
           efficient web solutions.
         </p>
+        <div className="buttons">
+          <a href={CV} download="Sohaib-CV.pdf" className=" Resume btn">
+            Resume
+            <i class='bx bxs-note cv'></i>
+          </a>
 
-        <Link>
-          <button className="btn">
-            Hire Me
-            <i className="bx bx-right-arrow-alt"></i>
-          </button>
-        </Link>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-80}
+          >
+            <button className="btn">
+              Hire Me
+              <i className="bx bx-right-arrow-alt"></i>
+            </button>
+          </Link>
+        </div>
       </div>
       <img src={bg} alt="" className="bg" />
     </section>

@@ -42,18 +42,29 @@
 .introJob span {
   color: var(--secondary-color);
 }
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+.cv {
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+}
 
-.btn {
+.btn,
+.Resume {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   margin: 1rem 0rem;
   padding: 0.75rem 2rem;
+  color: black;
   border: none;
   border-radius: 2rem;
   font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .bx-right-arrow-alt {
   font-size: 1.5rem;
@@ -71,18 +82,18 @@
   }
 }
 @media screen and (max-width: 480px) {
-    .bg {
-      right: -20vw;
-      content: url(../../assests/DullSohaib.png);
-      filter: none;
-    }
-    .introPara{
-      width: 90vw;
-    }
-    .introJob span{
-      font-size: 1.5rem !important;
-    }
-    .introText{
-      font-size: 70%;
-    }
+  .bg {
+    right: -20vw;
+    content: url(../../assests/DullSohaib.png);
+    filter: none;
   }
+  .introPara {
+    width: 90vw;
+  }
+  .introJob span {
+    font-size: 1.5rem !important;
+  }
+  .introText {
+    font-size: 70%;
+  }
+}
