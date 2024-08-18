@@ -40,7 +40,7 @@ const Intro = () => {
         <div className="buttons">
           <a href={CV} download="Sohaib-CV.pdf" className=" Resume btn">
             Resume
-            <i class='bx bxs-note cv'></i>
+            <i class="bx bxs-note cv"></i>
           </a>
 
           <Link

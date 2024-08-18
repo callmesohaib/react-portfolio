@@ -65,25 +65,7 @@ const Navbar = () => {
           Contact
         </Link>
       </div>
-      <button
-        className="desktopMenuBtn"
-        onClick={() => {
-          const contactSection = document.getElementById("contact");
-          const offset = -80;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = contactSection.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition + offset;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }}
-      >
-        <i className="bx bx-message-rounded desktopMenuImg"></i>
-        Contact Me
-      </button>
 
       <i
         class="bx bx-menu-alt-right mobMenu"

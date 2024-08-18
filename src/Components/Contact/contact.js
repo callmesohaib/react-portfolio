@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +35,12 @@ const Contact = () => {
           render: "Message sent successfully!",
           type: "success",
           isLoading: false,
-          autoClose: 3000,
+          autoClose: 2000,
+          closeOnClick: true,
+          draggable: true,
+          limit: 1,
+          pauseOnHover: true,
+          closeButton: "Close",
         });
         setFormData({
           name: "",
@@ -49,7 +55,8 @@ const Contact = () => {
           render: "Message not sent successfully!",
           type: "error",
           isLoading: false,
-          autoClose: 3000,
+          autoClose: 2000,
+          closeOnClick: true,
         });
       });
   };

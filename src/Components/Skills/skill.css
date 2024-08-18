@@ -60,7 +60,7 @@
 
 .container .skill-show,
 .container .skill-less {
-  display: none; /* Hide the buttons by default */
+  display: none;
 }
 
 @media (max-width: 895px) {
@@ -89,15 +89,6 @@
 
   .skills .container .bar .info span {
     font-size: 1rem;
-  }
-
-  .skills .container .bar {
-    margin-bottom: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .skills .container .bar.visible {
-    opacity: 1;
   }
 
   .skills .container .bar.hidden {

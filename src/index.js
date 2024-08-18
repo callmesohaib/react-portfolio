@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ToastContainer, Slide } from "react-toastify";
+import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App";
-import './toastify.css'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
     <ToastContainer
-      stacked
       position="top-center"
-      autoClose={3000}
-      limit={0}
+      autoClose={2000}
+      limit={1}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick
@@ -22,8 +20,7 @@ root.render(
       draggable
       pauseOnHover
       theme="dark"
-      transition={Slide}
-      bodyClassName="toastBody"
+      transition={Flip}
     />
   </React.StrictMode>
 );
