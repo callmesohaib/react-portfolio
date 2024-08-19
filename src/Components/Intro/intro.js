@@ -65,11 +65,7 @@ const Intro = () => {
           </Link>
         </div>
       </motion.div>
-      <img
-        src={bg}
-        alt=""
-        className="bg"
-      />
+      <img src={bg} alt="" className="bg" />
     </section>
   );
 };
