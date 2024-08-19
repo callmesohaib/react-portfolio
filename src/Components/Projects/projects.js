@@ -27,15 +27,14 @@ const Project = () => {
 
   const renderProjects = () => {
     return visibleProjects.map((project, index) => {
-      // Determine direction based on index
       const direction = index % 2 === 0 ? "right" : "left";
-  
+
       return (
         <motion.div
           variants={fadeIn(direction, 0.2)}
           initial="hidden"
           whileInView="show"
-          style={{opacity: 0.5}}
+          style={{ opacity: 0.5 }}
           viewport={{ once: false, amount: 0.7 }}
           key={index}
           className="project-box"
@@ -59,7 +58,6 @@ const Project = () => {
       );
     });
   };
-  
 
   const handleShowMore = () => {
     setIsExpanded(true);
