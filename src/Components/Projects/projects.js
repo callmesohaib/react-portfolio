@@ -35,6 +35,7 @@ const Project = () => {
           variants={fadeIn(direction, 0.2)}
           initial="hidden"
           whileInView="show"
+          style={{opacity: 0.5}}
           viewport={{ once: false, amount: 0.7 }}
           key={index}
           className="project-box"
