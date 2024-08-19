@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import projectData from "../../Json/project.json";
 import "./project.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
@@ -24,31 +26,39 @@ const Project = () => {
   );
 
   const renderProjects = () => {
-    return visibleProjects.map((project, index) => (
-      <div
-        key={index}
-        className={`project-box ${
-          !isExpanded && index >= 4 ? "fade-out" : "fade-in"
-        }`}
-      >
-        <div className="img">
-          <img src={images[project.img]} alt={project.title} />
-        </div>
-        <div className="desc">
-          <div className="project-heading">{project.title}</div>
-          <p>{project.description}</p>
-          <a
-            href={project.codeLink}
-            className="btn code"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Code
-          </a>
-        </div>
-      </div>
-    ));
+    return visibleProjects.map((project, index) => {
+      // Determine direction based on index
+      const direction = index % 2 === 0 ? "right" : "left";
+  
+      return (
+        <motion.div
+          variants={fadeIn(direction, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.7 }}
+          key={index}
+          className="project-box"
+        >
+          <div className="img">
+            <img src={images[project.img]} alt={project.title} />
+          </div>
+          <div className="desc">
+            <div className="project-heading">{project.title}</div>
+            <p>{project.description}</p>
+            <a
+              href={project.codeLink}
+              className="btn code"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+            </a>
+          </div>
+        </motion.div>
+      );
+    });
   };
+  
 
   const handleShowMore = () => {
     setIsExpanded(true);

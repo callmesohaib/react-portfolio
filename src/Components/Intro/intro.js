@@ -4,11 +4,19 @@ import bg from "../../assests/sohaibCrop.png";
 import { Link } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import CV from "../../CV.pdf";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
 
 const Intro = () => {
   return (
     <section id="intro">
-      <div className="introContent">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="introContent"
+      >
         <span className="hello">Hello,</span>
         <span className="introText">
           I'm <span className="introName">Sohaib </span>Ikram
@@ -40,7 +48,7 @@ const Intro = () => {
         <div className="buttons">
           <a href={CV} download="Sohaib-CV.pdf" className=" Resume btn">
             Resume
-            <i class="bx bxs-note cv"></i>
+            <i className="bx bxs-note cv"></i>
           </a>
 
           <Link
@@ -56,8 +64,16 @@ const Intro = () => {
             </button>
           </Link>
         </div>
-      </div>
-      <img src={bg} alt="" className="bg" />
+      </motion.div>
+      <motion.img
+        variants={fadeIn("left", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        src={bg}
+        alt=""
+        className="bg"
+      />
     </section>
   );
 };
