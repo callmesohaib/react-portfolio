@@ -65,11 +65,7 @@ const Intro = () => {
           </Link>
         </div>
       </motion.div>
-      <motion.img
-        variants={fadeIn("left", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+      <img
         src={bg}
         alt=""
         className="bg"
