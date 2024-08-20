@@ -45,22 +45,27 @@ const Intro = () => {
           for solving complex problems and a love for crafting elegant and
           efficient web solutions.
         </p>
-        <div className="social">
-        <a href="https://www.linkedin.com/in/sohaib-ikram249/">
-          <i className="bx bxl-linkedin"></i>
-        </a>
-        <a href="https://github.com/callmesohaib">
-          <i className="bx bxl-github"></i>
-        </a>
-        <a href="https://www.instagram.com/ufff_yawrrr_/?next=%2F">
-          <i className="bx bxl-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/sohaib.ikram.9461">
-          <i className="bx bxl-facebook-circle"></i>
-        </a>
-      </div>
-
-
+        <motion.div
+          variants={fadeIn("left", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          style={{ opacity: 0 }}
+          viewport={{ once: false, amount: 0.7 }}
+          className="social"
+        >
+          <a href="https://www.linkedin.com/in/sohaib-ikram249/">
+            <i className="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://github.com/callmesohaib">
+            <i className="bx bxl-github"></i>
+          </a>
+          <a href="https://www.instagram.com/ufff_yawrrr_/?next=%2F">
+            <i className="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/sohaib.ikram.9461">
+            <i className="bx bxl-facebook-circle"></i>
+          </a>
+        </motion.div>
 
         <div className="buttons">
           <a href={CV} download="Sohaib-CV.pdf" className=" Resume btn">
