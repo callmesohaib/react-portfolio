@@ -70,9 +70,7 @@
   font-size: 1.5rem;
 }
 
-.social {
-  padding-bottom: 25px;
-}
+
 .social a {
   font-size: 25px;
   color: var(--secondary-color);
