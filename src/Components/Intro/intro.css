@@ -105,7 +105,7 @@
 @media screen and (max-width: 480px) {
   .bg {
     right: -20vw;
-    content: url(../../assests/DullSohaib.png);
+    content: url(../../assests/1.png);
     filter: none;
   }
   .introPara {
