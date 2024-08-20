@@ -66,9 +66,8 @@ const Navbar = () => {
         </Link>
       </div>
 
-
       <i
-        class="bx bx-menu-alt-right mobMenu"
+        className="bx bx-menu-alt-right mobMenu"
         onClick={() => setShowMenu(!showMenu)}
       ></i>
       <div className="navMenu" style={{ display: showMenu ? "flex" : "none" }}>

@@ -4,7 +4,6 @@ import "./skill.css";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-
 const Skill = () => {
   const [skills, setSkills] = useState([]);
   const [showMore, setShowMore] = useState(false);
@@ -14,7 +13,6 @@ const Skill = () => {
   }, []);
 
   const showMoreSkills = () => setShowMore(true);
-
   const showLessSkills = () => {
     setShowMore(false);
     scrollToSkillsSection();
@@ -27,7 +25,6 @@ const Skill = () => {
     const elementRect = skillsSection.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition + offset;
-
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
