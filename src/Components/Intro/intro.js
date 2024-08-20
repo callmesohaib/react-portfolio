@@ -45,6 +45,23 @@ const Intro = () => {
           for solving complex problems and a love for crafting elegant and
           efficient web solutions.
         </p>
+        <div className="social">
+        <a href="https://www.linkedin.com/in/sohaib-ikram249/">
+          <i className="bx bxl-linkedin"></i>
+        </a>
+        <a href="https://github.com/callmesohaib">
+          <i className="bx bxl-github"></i>
+        </a>
+        <a href="https://www.instagram.com/ufff_yawrrr_/?next=%2F">
+          <i className="bx bxl-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/sohaib.ikram.9461">
+          <i className="bx bxl-facebook-circle"></i>
+        </a>
+      </div>
+
+
+
         <div className="buttons">
           <a href={CV} download="Sohaib-CV.pdf" className=" Resume btn">
             Resume
