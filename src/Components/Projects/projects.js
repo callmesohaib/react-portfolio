@@ -19,7 +19,7 @@ const Project = () => {
     r.keys().map((item, index) => {
       images[item.replace("./", "")] = r(item);
     });
-    return images;
+    return images;  
   };
   const images = importAll(
     require.context("../../ProjectImages", false, /\.(png|jpe?g|svg)$/)

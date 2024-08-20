@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import skillData from "../../Json/skill.json";
 import "./skill.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
+
 
 const Skill = () => {
   const [skills, setSkills] = useState([]);
@@ -39,7 +42,12 @@ const Skill = () => {
       <div className="container">
         <div className="row" id="skillsContainer">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
+              variants={fadeIn("left", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              style={{ opacity: 0.5 }}
+              viewport={{ once: false, amount: 0.7 }}
               key={index}
               className={`bar ${
                 index >= 6 && !showMore ? "hidden" : "visible"
@@ -49,7 +57,7 @@ const Skill = () => {
                 <img src={skill.icon} alt="skill" />
                 <span>{skill.name}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         {!showMore ? (
