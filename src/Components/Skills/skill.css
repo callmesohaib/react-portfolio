@@ -102,7 +102,8 @@
     position: relative;
     text-align: center;
     bottom: 15px;
-    width: 55%;
+    width: 50%;
+    font-size: 0.8rem;
     color: black;
     background-color: var(--secondary-color);
   }
