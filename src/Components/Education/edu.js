@@ -10,6 +10,7 @@ const Education = () => {
   return (
     <section id="education">
       <h2 className="heading" style={{ color: "white" }}>
+        <i class="bx bxs-graduation cap"></i>
         Education
       </h2>
 

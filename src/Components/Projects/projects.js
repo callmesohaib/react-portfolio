@@ -96,6 +96,7 @@ const Project = () => {
   return (
     <section className="project" id="project">
       <h2 className="heading" style={{ color: "white" }}>
+      <i class="fa-solid fa-laptop-code laptop"></i>
         Projects
       </h2>
       <div className="main-section" id="project-container">

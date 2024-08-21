@@ -35,10 +35,9 @@
   box-shadow: 0 0 10px wheat;
   transform: scale(1.03);
 }
-.eduBarText h2{
+.eduBarText h2 {
   font-weight: 500;
 }
-
 
 .eduBarText p {
   font-weight: 200;
@@ -53,6 +52,14 @@
 }
 .eduBarText .Date {
   margin-right: 0.5rem;
+}
+#education .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cap {
+  margin-right: 0.2rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -76,7 +83,7 @@
   .eduBarText {
     margin: 1rem 1.5rem;
   }
-  .eduBarText h2{
+  .eduBarText h2 {
     font-size: 1.3rem;
   }
 }

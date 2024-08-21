@@ -64,6 +64,7 @@ const Contact = () => {
   return (
     <section className="contact" id="contact">
       <h2 className="heading">
+      <i class="fa-solid fa-headset headset"></i>
         Contact <span>Me</span>
       </h2>
       <form onSubmit={handleSubmit} autoComplete="off">

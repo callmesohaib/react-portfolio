@@ -6,6 +6,9 @@
   width: 80vw;
   margin: 0 auto;
 }
+.laptop {
+  margin-right: 0.5rem;
+}
 
 .main-section {
   display: grid;
@@ -51,7 +54,7 @@
   bottom: 35px;
   color: black;
   height: 41%;
-  background-color: rgba(0, 0, 0, 0.514);
+  background-color: rgba(255, 255, 255, 0.9);
   transform: translateY(100%);
   transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
   backdrop-filter: blur(10px);
@@ -60,7 +63,6 @@
 .desc p {
   font-size: 0.9rem;
   margin-top: 2rem;
-  color: white;
 }
 
 .desc .project-heading {

@@ -34,7 +34,8 @@ const Skill = () => {
   return (
     <section className="skills" id="skills">
       <h2 className="heading">
-        Skills & <span>Abilities</span>
+        <i class="bx bx-library lib"></i>
+        Skills & Abilities
       </h2>
       <div className="container">
         <div className="row" id="skillsContainer">
