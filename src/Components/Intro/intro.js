@@ -53,16 +53,16 @@ const Intro = () => {
           viewport={{ once: false, amount: 0.7 }}
           className="social"
         >
-          <a href="https://www.linkedin.com/in/sohaib-ikram249/">
+          <a target="_blank" href="https://www.linkedin.com/in/sohaib-ikram249/">
             <i className="bx bxl-linkedin"></i>
           </a>
-          <a href="https://github.com/callmesohaib">
+          <a target="_blank" href="https://github.com/callmesohaib">
             <i className="bx bxl-github"></i>
           </a>
-          <a href="https://www.instagram.com/sohaib.__.hoon/?next=%2F">
+          <a target="_blank" href="https://www.instagram.com/sohaib.__.hoon/?next=%2F">
             <i className="bx bxl-instagram"></i>
           </a>
-          <a href="https://www.facebook.com/sohaib.ikram.9461">
+          <a target="_blank" href="https://www.facebook.com/sohaib.ikram.9461">
             <i className="bx bxl-facebook-circle"></i>
           </a>
         </motion.div>
