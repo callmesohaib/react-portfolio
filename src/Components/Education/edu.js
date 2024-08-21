@@ -55,7 +55,7 @@ const Education = () => {
             className="eduBarText"
           >
             <h3>University of Engineering and Technology</h3>
-            <p>Computer Science</p>
+            <p>BS Computer Science</p>
             <h4>2022 - Present</h4>
           </motion.div>
         </div>
