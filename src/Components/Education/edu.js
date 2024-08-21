@@ -24,9 +24,12 @@ const Education = () => {
             viewport={{ once: false, amount: 0.7 }}
             className="eduBarText"
           >
-            <h3>Bab-e-Arqam Model High School</h3>
+            <h2>Bab-e-Arqam Model High School</h2>
             <p>Science</p>
-            <h4>2018 - 2020</h4>
+            <h4>
+              <span className="Date"> 2018 - 2020 </span> |
+              <span className="update">Completed</span>
+            </h4>
           </motion.div>
         </div>
         <div className="eduBar">
@@ -39,9 +42,12 @@ const Education = () => {
             viewport={{ once: false, amount: 0.7 }}
             className="eduBarText"
           >
-            <h3>Punjab Group of Colleges</h3>
+            <h2>Punjab Group of Colleges</h2>
             <p>Pre-Engineering</p>
-            <h4>2020 - 2022</h4>
+            <h4>
+              <span className="Date"> 2020 - 2022 </span> |
+              <span className="update">Completed</span>
+            </h4>
           </motion.div>
         </div>
         <div className="eduBar">
@@ -54,9 +60,12 @@ const Education = () => {
             viewport={{ once: false, amount: 0.7 }}
             className="eduBarText"
           >
-            <h3>University of Engineering and Technology</h3>
+            <h2>University of Engineering and Technology</h2>
             <p>BS Computer Science</p>
-            <h4>2022 - Present</h4>
+            <h4>
+              <span className="Date"> 2022 - 2026 </span> |
+              <span className="update">Pursuing</span>
+            </h4>
           </motion.div>
         </div>
       </div>

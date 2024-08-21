@@ -35,9 +35,24 @@
   box-shadow: 0 0 10px wheat;
   transform: scale(1.03);
 }
+.eduBarText h2{
+  font-weight: 500;
+}
+
+
 .eduBarText p {
   font-weight: 200;
   font-size: 1.2rem;
+}
+.eduBarText .update {
+  margin-left: 0.5rem;
+  color: green;
+}
+.eduBars .eduBar:last-child .update {
+  color: red;
+}
+.eduBarText .Date {
+  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -60,5 +75,8 @@
   }
   .eduBarText {
     margin: 1rem 1.5rem;
+  }
+  .eduBarText h2{
+    font-size: 1.4rem;
   }
 }
