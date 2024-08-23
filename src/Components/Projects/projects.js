@@ -19,10 +19,10 @@ const Project = () => {
     r.keys().map((item, index) => {
       images[item.replace("./", "")] = r(item);
     });
-    return images;  
+    return images;
   };
   const images = importAll(
-    require.context("../../ProjectImages", false, /\.(png|jpe?g|svg)$/)
+    require.context("../../ProjectImages", false, /\.(png|jpe?g|svg|webp)$/)
   );
 
   const renderProjects = () => {
@@ -96,7 +96,7 @@ const Project = () => {
   return (
     <section className="project" id="project">
       <h2 className="heading" style={{ color: "white" }}>
-      <i class="fa-solid fa-laptop-code laptop"></i>
+        <i class="fa-solid fa-laptop-code laptop"></i>
         Projects
       </h2>
       <div className="main-section" id="project-container">
