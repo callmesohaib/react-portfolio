@@ -2,12 +2,14 @@ import React from "react";
 import "./new.css";
 import projectData from "../../Json/project.json";
 
+
 const New = () => {
   return (
     <section className="pro" id="pro" style={{ color: "white" }}>
-      <div className="heading" style={{ color: "white" }}>
+      <h2 className="heading" style={{ color: "white" }}>
+      <i class="fa-solid fa-laptop-code laptop"></i>
         Projects
-      </div>
+      </h2>
       <div className="projects">
         {projectData.map((project, index) => (
           <div className="project" key={index}>

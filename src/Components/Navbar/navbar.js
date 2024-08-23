@@ -44,7 +44,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="project"
+          to="pro"
           spy={true}
           smooth={true}
           duration={500}
