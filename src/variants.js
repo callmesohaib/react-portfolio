@@ -13,6 +13,8 @@ export const fadeIn = (direction, delay) => {
         // ease: [0.25, 0.25, 0.25, 0.75],
         ease: "easeInOut",
         duration: 1.2,
+        stiffness: 50,
+        damping: 15, 
         delay: delay,
       },
     },

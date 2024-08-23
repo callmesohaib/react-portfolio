@@ -25,8 +25,6 @@
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   position: relative;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .project-box:hover {
@@ -42,7 +40,7 @@
   border-top-left-radius: 20px;
   transform: translateY(25%);
   height: 90%;
-  transition: transform 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .desc {
@@ -115,6 +113,7 @@
   .main-section {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
   }
   .desc {
     bottom: 20px;
