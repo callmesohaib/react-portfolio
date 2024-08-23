@@ -1,7 +1,7 @@
 [
     {
         "img": "laravel web.webp",
-        "title": "Customer Registration System",
+        "title": "Registration System",
         "description": "A simple customer registration system using Laravel framework. It includes user Registration, Temporary Delete, Restore, Search and Delete functionality.",
         "codeLink": "https://github.com/callmesohaib/Laravel-Project"
     },
@@ -20,7 +20,7 @@
     {
         "img": "solo-tech.webp",
         "title": "Solo-Tech ",
-        "description": "I developed the fully functional webiste for Tech Company for MernStack Practice. There are multiple of features like Login, Register, Logout and many other pages related to any tech company.",
+        "description": "Fully functional webiste for Tech Company using MernStack Development. There are multiple of features like Login, Register, Logout and many other pages related to any tech company.",
         "codeLink": "https://github.com/callmesohaib/solo-tech"
     },
     {
