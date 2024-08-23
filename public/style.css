@@ -32,6 +32,9 @@ body {
   background-color: rgb(70, 70, 70);
   width: 50px;
 }
+.btn:hover{
+box-shadow: 0 0 15px wheat;
+}
 
 @media screen and (max-width: 480px) {
   .heading {
