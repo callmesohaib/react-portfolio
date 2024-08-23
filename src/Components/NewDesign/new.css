@@ -8,7 +8,9 @@
 .project {
   border: 2px solid var(--secondary-color);
   transition: 0.3s ease-in-out;
-  height: 80vh;
+  height:82vh;
+  background-color: rgb(70, 70, 70);
+  border-radius: 1rem;
 }
 h1 {
   text-align: center;
@@ -31,7 +33,7 @@ h1 {
   margin: 0 auto;
   background-color: var(--secondary-color);
   position: relative;
-  bottom: 0.5rem;
+  bottom: 2rem;
 }
 .project:hover {
   transform: scale(1.05);
@@ -44,5 +46,8 @@ h1 {
   }
   .project{
     height: 60vh;
+  }
+  .project a{
+    bottom: 0.5rem;
   }
 }
