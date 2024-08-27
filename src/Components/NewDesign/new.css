@@ -7,17 +7,41 @@
   grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
   gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
 }
 .laptop {
   margin-right: 0.5rem;
 }
 
 .project {
-  border: 2px solid var(--secondary-color);
   transition: 0.3s ease-in-out;
-  height: 82vh;
-  background-color: rgb(70, 70, 70);
   border-radius: 1rem;
+}
+.project_Info {
+  margin-top: -1.4rem;
+  box-shadow: 5px 5px 10px rgb(90, 90, 90);
+}
+
+.projectNavbar {
+  width: 30rem;
+  background-color: var(--secondary-color);
+  margin: 1rem auto;
+  padding: 0.3rem 0.5rem;
+  color: black;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.projectMenuList {
+  background-color: rgb(176, 123, 7);
+  padding: 0.4rem;
+  cursor: pointer;
+  width: 6rem;
+  text-align: center;
 }
 h1 {
   text-align: center;
@@ -29,20 +53,29 @@ h1 {
   width: 100%;
   height: auto;
   object-fit: cover;
-  padding: 1rem;
 }
 .project p {
-  margin: 0rem 1rem; 
+  margin: 0rem 1rem;
   font-size: 0.9rem;
   height: 25%;
 }
 .project a {
-  width: 40%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.git {
+  margin-bottom: 0.4rem;
+  transition: 0.5s ease-in-out;
+}
+.code {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.git:hover {
   background-color: var(--secondary-color);
-  position: relative;
-  bottom: 1rem;
-  transition: 0.3s ease-in-out;
+  color: rgb(30, 30, 30);
+  border-radius: 50rem;
 }
 .project:hover {
   transform: scale(1.05);
@@ -52,10 +85,12 @@ h1 {
   .projects {
     grid-template-columns: repeat(1, 1fr);
   }
-  .project {
-    height: 60vh;
+
+  .projectNavbar {
+    width: 20rem;
   }
-  .project a {
-    bottom: 0.5rem;
+  .projectMenuList {
+    width: 4rem;
+    font-size: 0.6rem;
   }
 }

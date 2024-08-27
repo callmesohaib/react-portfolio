@@ -1,6 +1,7 @@
 import React from "react";
 import "./new.css";
 import projectData from "../../Json/project.json";
+import { Link } from "react-scroll";
 
 const New = () => {
   return (
@@ -9,23 +10,30 @@ const New = () => {
         <i class="fa-solid fa-laptop-code laptop"></i>
         Projects
       </h2>
+      <div className="projectNavbar">
+        <Link className="projectMenuList">All</Link>
+        <Link className="projectMenuList">Frontend</Link>
+        <Link className="projectMenuList">Backend</Link>
+        <Link className="projectMenuList">Python</Link>
+      </div>
       <div className="projects">
         {projectData.map((project, index) => (
           <div className="project" key={index}>
-            <h1>{project.title}</h1>
             <img
               src={require(`../../ProjectImages/${project.img}`)}
               alt={project.title}
             />
-            <p>{project.description}</p>
-            <a
-              href={project.codeLink}
-              className="btn code"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Code
-            </a>
+            <div className="project_Info">
+              <h1>{project.title}</h1>
+              <a
+                href={project.codeLink}
+                className="code"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bx bxl-github git"></i>
+              </a>
+            </div>
           </div>
         ))}
       </div>

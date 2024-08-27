@@ -31,7 +31,7 @@
     },
     {
         "img": "JsChecker.webp",
-        "title": "JavaScript Checker",
+        "title": "HTML Checker",
         "description": "JavaScript Checker using HTML, CSS, JavaScript. This is mainly done by making the regular expressions of JavaScript.",
         "codeLink": "https://github.com/callmesohaib/Js-Checker"
     }
