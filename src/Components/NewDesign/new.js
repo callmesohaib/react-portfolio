@@ -92,7 +92,7 @@ const New = () => {
               ease: [0.42, 0, 0.58, 1],
               delay: index * 0.3,
             }}
-            viewport={{ once: false, amount: 0.7 }} 
+            viewport={{ once: false, amount: 0.7 }}
           >
             <div className="image">
               <img
