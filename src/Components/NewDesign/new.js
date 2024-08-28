@@ -85,14 +85,14 @@ const New = () => {
           <motion.div
             className="project"
             key={index}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0.2, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.5,
-              ease: "easeOut",
+              ease: [0.42, 0, 0.58, 1],
               delay: index * 0.3,
             }}
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: false, amount: 0.7 }} 
           >
             <div className="image">
               <img
