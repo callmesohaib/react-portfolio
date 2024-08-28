@@ -61,20 +61,22 @@ const New = () => {
       <div className="projects">
         {menuItems.map((project, index) => (
           <div className="project" key={index}>
-            <img
-              src={require(`../../ProjectImages/${project.img}`)}
-              alt={project.title}
-            />
-            <div className="project_Info">
-              <h1>{project.title}</h1>
-              <a
-                href={project.codeLink}
-                className="code"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bx bxl-github git"></i>
-              </a>
+            <div className="image">
+              <img
+                src={require(`../../ProjectImages/${project.img}`)}
+                alt={project.title}
+              />
+              <div className="project_Info">
+                <h1>{project.title}</h1>
+                <a
+                  href={project.codeLink}
+                  className="code"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="bx bxl-github git"></i>
+                </a>
+              </div>
             </div>
           </div>
         ))}
