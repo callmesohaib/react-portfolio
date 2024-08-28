@@ -48,6 +48,8 @@
   cursor: pointer;
   width: 6rem;
   text-align: center;
+  border: none;
+  font-weight: bold;
 }
 h1 {
   text-align: center;
