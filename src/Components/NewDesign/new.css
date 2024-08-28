@@ -49,7 +49,9 @@
   text-align: center;
   border: none;
   font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .projectMenuList.active {
   background-color: black; 
   color: var(--secondary-color);
