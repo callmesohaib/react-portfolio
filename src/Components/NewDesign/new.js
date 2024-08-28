@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./new.css";
 import projectData from "../../Json/project.json";
+import { motion } from "framer-motion";
 
 const New = () => {
-  const [menuItems, setMenuItem] = useState(projectData);
+  const [menuItems, setMenuItem] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
+  const timeouts = [];
+
+  const renderProjects = (projects) => {
+    setMenuItem([]);
+
+    timeouts.forEach((timeout) => clearTimeout(timeout));
+    timeouts.length = 0;
+
+    projects.forEach((project, index) => {
+      const timeoutId = setTimeout(() => {
+        setMenuItem((prevItems) => [...prevItems, project]);
+      }, index * 300);
+      timeouts.push(timeoutId);
+    });
+  };
+
+  useEffect(() => {
+    renderProjects(projectData);
+
+    return () => {
+      timeouts.forEach((timeout) => clearTimeout(timeout));
+    };
+  }, []);
 
   const filterItem = (category) => {
     setActiveCategory(category);
-    if (category === "All") {
-      setMenuItem(projectData);
-    } else {
-      const updateList = projectData.filter((curElement) => {
-        return curElement.category === category;
-      });
-      setMenuItem(updateList);
-    }
+    const filteredProjects =
+      category === "All"
+        ? projectData
+        : projectData.filter((curElement) => curElement.category === category);
+
+    renderProjects(filteredProjects);
   };
 
   return (
@@ -60,7 +82,18 @@ const New = () => {
       </div>
       <div className="projects">
         {menuItems.map((project, index) => (
-          <div className="project" key={index}>
+          <motion.div
+            className="project"
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+              delay: index * 0.3,
+            }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             <div className="image">
               <img
                 src={require(`../../ProjectImages/${project.img}`)}
@@ -81,7 +114,7 @@ const New = () => {
             <div className="project_title">
               <h1>{project.title}</h1>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
