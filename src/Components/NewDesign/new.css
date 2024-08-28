@@ -52,14 +52,16 @@ h1 {
 }
 .code {
   font-size: 2rem;
-  color: wheat;
+  color: var(--secondary-color);
 }
 
 .git:hover {
-  background-color: wheat;
+  background-color: var(--secondary-color);
   color: black;
   border-radius: 50rem;
+
 }
+
 
 .project {
   width: 100%;
@@ -106,7 +108,7 @@ h1 {
 
   margin-top: 2rem;
   font-size: 0.8rem;
-  color: wheat;
+  color: var(--secondary-color);
   text-align: left;
   height: 60%;
 }
