@@ -43,7 +43,6 @@
   margin-bottom: 1rem;
 }
 .projectMenuList {
-  background-color: rgb(176, 123, 7);
   padding: 0.4rem;
   cursor: pointer;
   width: 6rem;
@@ -51,6 +50,11 @@
   border: none;
   font-weight: bold;
 }
+.projectMenuList.active {
+  background-color: black; 
+  color: var(--secondary-color);
+}
+
 h1 {
   text-align: center;
   margin-top: 1rem;

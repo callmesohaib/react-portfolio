@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import "./new.css";
 import projectData from "../../Json/project.json";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const New = () => {
-  const [menuItems, SetMenuItem] = useState(projectData);
+  const [menuItems, setMenuItem] = useState(projectData);
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filterItem = (category) => {
+    setActiveCategory(category);
     if (category === "All") {
-      SetMenuItem(projectData); 
+      setMenuItem(projectData);
     } else {
       const updateList = projectData.filter((curElement) => {
         return curElement.category === category;
       });
-      SetMenuItem(updateList);
+      setMenuItem(updateList);
     }
   };
 
@@ -25,16 +25,36 @@ const New = () => {
         Projects
       </h2>
       <div className="projectNavbar">
-        <button className="projectMenuList" onClick={() => filterItem("All")}>
+        <button
+          className={`projectMenuList ${
+            activeCategory === "All" ? "active" : ""
+          }`}
+          onClick={() => filterItem("All")}
+        >
           All
         </button>
-        <button className="projectMenuList" onClick={() => filterItem("Frontend")}>
+        <button
+          className={`projectMenuList ${
+            activeCategory === "Frontend" ? "active" : ""
+          }`}
+          onClick={() => filterItem("Frontend")}
+        >
           Frontend
         </button>
-        <button className="projectMenuList" onClick={() => filterItem("Backend")}>
+        <button
+          className={`projectMenuList ${
+            activeCategory === "Backend" ? "active" : ""
+          }`}
+          onClick={() => filterItem("Backend")}
+        >
           Backend
         </button>
-        <button className="projectMenuList" onClick={() => filterItem("Python")}>
+        <button
+          className={`projectMenuList ${
+            activeCategory === "Python" ? "active" : ""
+          }`}
+          onClick={() => filterItem("Python")}
+        >
           Python
         </button>
       </div>
