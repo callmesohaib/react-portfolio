@@ -51,11 +51,11 @@ const New = () => {
         </button>
         <button
           className={`projectMenuList ${
-            activeCategory === "Python" ? "active" : ""
+            activeCategory === "Coding" ? "active" : ""
           }`}
-          onClick={() => filterItem("Python")}
+          onClick={() => filterItem("Coding")}
         >
-          Python
+          Coding
         </button>
       </div>
       <div className="projects">
@@ -67,7 +67,7 @@ const New = () => {
                 alt={project.title}
               />
               <div className="project_Info">
-                <h1>{project.title}</h1>
+                <p>{project.description}</p>
                 <a
                   href={project.codeLink}
                   className="code"
@@ -77,6 +77,9 @@ const New = () => {
                   <i className="bx bxl-github git"></i>
                 </a>
               </div>
+            </div>
+            <div className="project_title">
+              <h1>{project.title}</h1>
             </div>
           </div>
         ))}
