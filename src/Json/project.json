@@ -40,6 +40,12 @@
         "description": "JavaScript Checker using HTML, CSS, JavaScript. This is mainly done by making the regular expressions of JavaScript.",
         "codeLink": "https://github.com/callmesohaib/Js-Checker",
         "category": "Frontend"
+    },
+    {
+        "img": "Car showroom.webp",
+        "title": "Car ShowRoom",
+        "description": "Car Showroom using python and tkinter package. You can buy car and rent the car in this project.",
+        "codeLink": "https://github.com/callmesohaib/Car-ShowRoom-Tkinter",
+        "category": "Coding"
     }
-  
 ]
