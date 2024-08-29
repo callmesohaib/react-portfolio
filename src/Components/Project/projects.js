@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./new.css";
+import "./projects.css";
 import projectData from "../../Json/project.json";
 import { motion } from "framer-motion";
 
-const New = () => {
+const Project = () => {
   const [menuItems, setMenuItem] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const timeouts = [];
@@ -121,4 +121,4 @@ const New = () => {
   );
 };
 
-export default New;
+export default Project;
