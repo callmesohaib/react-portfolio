@@ -22,16 +22,9 @@ body {
   text-align: center;
 }
 ::-webkit-scrollbar {
-  width: 15px;
+  display: none; 
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--secondary-color);
-}
-::-webkit-scrollbar-track {
-  background-color: rgb(70, 70, 70);
-  width: 50px;
-}
 .btn:hover{
 box-shadow: 0 0 15px wheat;
 }
