@@ -7,6 +7,13 @@
         "category": "Backend"
     },
     {
+        "img": "brightMind.webp",
+        "title": "Quiz Application",
+        "description": "A Quiz Web Application using ASP.NET Framework. It includes Crud Operations for Teacher and Quiz taking for students.",
+        "codeLink": "https://github.com/callmesohaib/Laravel-Project",
+        "category": "Backend"
+    },
+    {
         "img": "instaclone.webp",
         "title": "Instagram Clone",
         "description": "Instagram Clone using Laravel framework. It includes Login, Signup, Logout, Posting Images and Comments, Delete posts and Modification of the Profile functionality.",
@@ -32,20 +39,6 @@
         "title": "Code Analysis",
         "description": "Analyzing the Relations and finding the Runtime using Master, Extended Master and Muster Theorems.",
         "codeLink": "https://github.com/callmesohaib/Code-Analysis",
-        "category": "Coding"
-    },
-    {
-        "img": "JsChecker.webp",
-        "title": "HTML Checker",
-        "description": "JavaScript Checker using HTML, CSS, JavaScript. This is mainly done by making the regular expressions of JavaScript.",
-        "codeLink": "https://github.com/callmesohaib/Js-Checker",
-        "category": "Frontend"
-    },
-    {
-        "img": "Car showroom.webp",
-        "title": "Car ShowRoom",
-        "description": "Car Showroom using python and tkinter package. You can buy car and rent the car in this project.",
-        "codeLink": "https://github.com/callmesohaib/Car-ShowRoom-Tkinter",
         "category": "Coding"
     }
 ]
