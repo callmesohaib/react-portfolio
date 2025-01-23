@@ -13,14 +13,20 @@
   align-items: center;
   margin-bottom: 1.5rem;
 }
+.imageContainer img {
+  transform: scale(1.2); 
+  transition: transform 0.3s ease-in-out;
+}
 
 .mobileBg {
+  content: url('../../assests/sohaibCrop1.png');
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: contain;
   border: 3px solid var(--secondary-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
 }
 .bg {
   position: absolute;
