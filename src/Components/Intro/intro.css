@@ -105,8 +105,8 @@
 }
 @media screen and (max-width: 480px) {
   .bg {
-    right: -20vw;
-    content: url(../../assests/1.png);
+    right:0;
+    content: none;
     filter: none;
   }
   .introPara {
