@@ -5,40 +5,10 @@ import { motion } from "framer-motion";
 
 const Project = () => {
   const [menuItems, setMenuItem] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("All");
-  const timeouts = [];
-
-  const renderProjects = (projects) => {
-    setMenuItem([]);
-
-    timeouts.forEach((timeout) => clearTimeout(timeout));
-    timeouts.length = 0;
-
-    projects.forEach((project, index) => {
-      const timeoutId = setTimeout(() => {
-        setMenuItem((prevItems) => [...prevItems, project]);
-      }, index * 300);
-      timeouts.push(timeoutId);
-    });
-  };
 
   useEffect(() => {
-    renderProjects(projectData);
-
-    return () => {
-      timeouts.forEach((timeout) => clearTimeout(timeout));
-    };
+    setMenuItem(projectData);
   }, []);
-
-  const filterItem = (category) => {
-    setActiveCategory(category);
-    const filteredProjects =
-      category === "All"
-        ? projectData
-        : projectData.filter((curElement) => curElement.category === category);
-
-    renderProjects(filteredProjects);
-  };
 
   return (
     <section className="pro" id="pro" style={{ color: "white" }}>
@@ -46,40 +16,6 @@ const Project = () => {
         <i className="fa-solid fa-laptop-code laptop"></i>
         Projects
       </h2>
-      <div className="projectNavbar">
-        <button
-          className={`projectMenuList ${
-            activeCategory === "All" ? "active" : ""
-          }`}
-          onClick={() => filterItem("All")}
-        >
-          All
-        </button>
-        <button
-          className={`projectMenuList ${
-            activeCategory === "Frontend" ? "active" : ""
-          }`}
-          onClick={() => filterItem("Frontend")}
-        >
-          Frontend
-        </button>
-        <button
-          className={`projectMenuList ${
-            activeCategory === "Backend" ? "active" : ""
-          }`}
-          onClick={() => filterItem("Backend")}
-        >
-          Backend
-        </button>
-        <button
-          className={`projectMenuList ${
-            activeCategory === "Coding" ? "active" : ""
-          }`}
-          onClick={() => filterItem("Coding")}
-        >
-          Coding
-        </button>
-      </div>
       <div className="projects">
         {menuItems.map((project, index) => (
           <motion.div
