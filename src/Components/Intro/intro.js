@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./intro.css";
 import bg from "../../assests/sohaibCrop.png";
 import { Link } from "react-scroll";
@@ -8,6 +8,17 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
 const Intro = () => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 480);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 480); // Set desktop condition
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section id="intro">
       <motion.div
@@ -87,7 +98,8 @@ const Intro = () => {
           </Link>
         </div>
       </motion.div>
-      <img src={bg} alt="" className="bg" />
+      {/* Conditional rendering for background image */}
+      {isDesktop && <img src={bg} alt="Background" className="bg" />}
     </section>
   );
 };
