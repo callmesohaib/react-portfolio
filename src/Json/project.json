@@ -1,50 +1,52 @@
 [
     {
-        "img": "laravel web.webp",
-        "title": "Registration System",
-        "description": "A simple customer registration system using Laravel framework. It includes user Registration, Temporary Delete, Restore, Search and Delete functionality.",
-        "codeLink": "https://github.com/callmesohaib/Laravel-Project",
-        "category": "Backend",
-        "technologies": ["Laravel", "PHP", "MySQL"]
+      "img": "laravel web.webp",
+      "title": "Registration System",
+      "description": "Streamlined customer management solution built with Laravel. Features include seamless registration, temporary deletion with recovery options, powerful search functionality, and secure permanent deletion capabilities.",
+      "codeLink": "https://github.com/callmesohaib/Laravel-Project",
+      "category": "Backend",
+      "technologies": ["Laravel", "PHP", "MySQL"]
     },
     {
-        "img": "brightMind.webp",
-        "title": "Quiz Application",
-        "description": "A Quiz Web Application using ASP.NET Framework. It includes Crud Operations for Teacher and Quiz taking for students.",
-        "codeLink": "https://github.com/callmesohaib/Quiz-Management",
-        "category": "Backend",
-        "technologies": ["ASP.NET", "C#", "SQL Server"]
+      "img": "brightMind.webp",
+      "title": "Quiz Application",
+      "description": "Interactive educational platform developed with ASP.NET. Empowers teachers with comprehensive CRUD operations for quiz management, while providing students with an engaging quiz-taking experience.",
+      "codeLink": "https://github.com/callmesohaib/Quiz-Management",
+      "category": "Backend",
+      "technologies": ["ASP.NET", "C#", "SQL Server"]
     },
     {
-        "img": "instaclone.webp",
-        "title": "Instagram Clone",
-        "description": "Instagram Clone using Laravel framework. It includes Login, Signup, Logout, Posting Images and Comments, Delete posts and Modification of the Profile functionality.",
-        "codeLink": "https://github.com/callmesohaib/InstaPosts",
-        "category": "Backend",
-        "technologies": ["Laravel", "PHP", "MySQL"]
+      "img": "instaclone.webp",
+      "title": "Instagram Clone",
+      "description": "Feature-rich social media platform built with Laravel. Implements secure authentication, intuitive content posting, interactive commenting system, and comprehensive profile customization options.",
+      "codeLink": "https://github.com/callmesohaib/InstaPosts",
+      "category": "Backend",
+      "technologies": ["Laravel", "PHP", "MySQL"]
     },
     {
-        "img": "twitterClone.webp",
-        "title": "Twitter Clone",
-        "description": "I developed a Twitter clone as part of my web development projects to demonstrate my skills in front-end design and implementation.",
-        "codeLink": "https://github.com/callmesohaib/TwitterClone",
-        "category": "Frontend",
-        "technologies": ["React", "CSS", "JavaScript"]
+      "img": "twitterClone.webp",
+      "title": "Twitter Clone",
+      "description": "Sleek microblogging platform showcasing advanced front-end development skills. Replicates Twitter's core functionality with a clean, responsive interface and smooth user experience.",
+      "codeLink": "https://github.com/callmesohaib/TwitterClone",
+      "category": "Frontend",
+      "technologies": ["Tailwind CSS"]
     },
     {
-        "img": "solo-tech.webp",
-        "title": "Solo-Tech ",
-        "description": "Fully functional website for Tech Company using MernStack. There are multiple of features like Login, Register, Logout and many others related to any tech company.",
-        "codeLink": "https://github.com/callmesohaib/Backend-Solo-Tech",
-        "category": "Backend",
-        "technologies": ["MernStack"]
+      "img": "solo-tech.webp",
+      "title": "Solo-Tech",
+      "description": "Comprehensive tech company website built with MERN stack. Features robust authentication system, dynamic content management, and responsive design optimized for all devices.",
+      "codeLink": "https://github.com/callmesohaib/Backend-Solo-Tech",
+      "category": "Backend",
+      "technologies": ["MernStack"]
     },
     {
-        "img": "DAA.webp",
-        "title": "Code Analysis",
-        "description": "Analyzing the Relations and finding the Runtime using Master, Extended Master and Muster Theorems.",
-        "codeLink": "https://github.com/callmesohaib/Code-Analysis",
-        "category": "Coding",
-        "technologies": ["Algorithms", "C++"]
+      "img": "DAA.webp",
+      "title": "Code Analysis",
+      "description": "Advanced algorithm analysis tool implementing Master, Extended Master, and Muster Theorems. Efficiently calculates runtime complexity and visualizes algorithmic relationships for optimized performance.",
+      "codeLink": "https://github.com/callmesohaib/Code-Analysis",
+      "category": "Coding",
+      "technologies": ["Algorithms", "C++"]
     }
-]
+  ]
+  
+  

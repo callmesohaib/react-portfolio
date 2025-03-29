@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import "./projects.css"
 import projectData from "../../Json/project.json"
@@ -12,6 +12,9 @@ const Project = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [isPlaying, setIsPlaying] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
+  const [expandedDescriptions, setExpandedDescriptions] = useState({})
+  const [imagesLoaded, setImagesLoaded] = useState({})
+  const imageRefs = useRef({})
 
   // Determine how many slides to show based on screen size
   const slidesToShow = isMobile ? 1 : 3
@@ -35,6 +38,23 @@ const Project = () => {
     }
   }, [])
 
+  // Preload images for better quality
+  useEffect(() => {
+    projects.forEach((project, index) => {
+      if (!imagesLoaded[index]) {
+        const img = new Image()
+        img.onload = () => {
+          setImagesLoaded((prev) => ({
+            ...prev,
+            [index]: true,
+          }))
+        }
+        img.src = require(`../../ProjectImages/${project.img || "/placeholder.svg"}`)
+        imageRefs.current[index] = img
+      }
+    })
+  }, [projects, imagesLoaded])
+
   // Calculate total number of pages
   const totalPages = Math.ceil(projects.length / slidesToShow)
 
@@ -51,6 +71,8 @@ const Project = () => {
       const nextIndex = prevIndex + slidesToShow
       return nextIndex >= projects.length ? 0 : nextIndex
     })
+    // Reset expanded descriptions when changing slides
+    setExpandedDescriptions({})
   }, [projects.length, slidesToShow])
 
   // Modified to go back by slidesToShow
@@ -60,6 +82,8 @@ const Project = () => {
       const prevPage = Math.floor(prevIndex / slidesToShow) - 1
       return prevPage < 0 ? maxIndex : prevPage * slidesToShow
     })
+    // Reset expanded descriptions when changing slides
+    setExpandedDescriptions({})
   }, [maxIndex, slidesToShow])
 
   // Modified to go to specific page
@@ -68,9 +92,19 @@ const Project = () => {
       const targetIndex = pageIndex * slidesToShow
       setDirection(targetIndex > currentIndex ? 1 : -1)
       setCurrentIndex(targetIndex)
+      // Reset expanded descriptions when changing slides
+      setExpandedDescriptions({})
     },
     [currentIndex, slidesToShow],
   )
+
+  // Toggle description expansion
+  const toggleDescription = (projectIndex) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [projectIndex]: !prev[projectIndex],
+    }))
+  }
 
   // Auto-slide functionality
   useEffect(() => {
@@ -165,44 +199,68 @@ const Project = () => {
               gap: "1rem",
             }}
           >
-            {visibleProjects.map((project, index) => (
-              <motion.div
-                className="project"
-                key={index}
-                initial={{ opacity: 0.2, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.42, 0, 0.58, 1],
-                  delay: index * 0.2,
-                }}
-                viewport={{ once: false, amount: 0.7 }}
-              >
-                <div className="project-card">
-                  <div className="project-image">
-                    <img src={require(`../../ProjectImages/${project.img || "/placeholder.svg"}`)} alt={project.title} />
-                    <div className="project-category">
-                      <span>{project.category}</span>
+            {visibleProjects.map((project, index) => {
+              const projectIndex = currentIndex + index
+              const isExpanded = expandedDescriptions[projectIndex] || false
+
+              return (
+                <motion.div
+                  className="project"
+                  key={index}
+                  initial={{ opacity: 0.2, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.42, 0, 0.58, 1],
+                    delay: index * 0.2,
+                  }}
+                  viewport={{ once: false, amount: 0.7 }}
+                >
+                  <div className="project-card">
+                    <div className="project-image">
+                      <img
+                        src={require(`../../ProjectImages/${project.img || "/placeholder.svg"}`)}
+                        alt={project.title}
+                        loading="eager"
+                        decoding="async"
+                      />
+                      <div className="project-category">
+                        <span>{project.category}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="project-content">
-                    <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <div className="project-footer">
-                      <a href={project.codeLink} className="github-link" target="_blank" rel="noopener noreferrer">
-                        <i className="bx bxl-github"></i>
-                        <span>View Code</span>
-                      </a>
-                      <div className="project-tech">
-                        {project.technologies && project.technologies.map((tech, techIndex) => (
-                          <span key={techIndex} className="tech-tag">{tech}</span>
-                        ))}
+                    <div className="project-content">
+                      <h3 className="project-title">{project.title}</h3>
+
+                      <div className="project-description-container">
+                        <p className={`project-description ${isExpanded ? "expanded" : ""}`}>{project.description}</p>
+                        <button
+                          className="read-more-btn"
+                          onClick={() => toggleDescription(projectIndex)}
+                          aria-label={isExpanded ? "Read less" : "Read more"}
+                        >
+                          {isExpanded ? "Read Less" : "Read More"}
+                        </button>
+                      </div>
+
+                      <div className="project-footer">
+                        <a href={project.codeLink} className="github-link" target="_blank" rel="noopener noreferrer">
+                          <i className="bx bxl-github"></i>
+                          <span>View Code</span>
+                        </a>
+                        <div className="project-tech">
+                          {project.technologies &&
+                            project.technologies.map((tech, techIndex) => (
+                              <span key={techIndex} className="tech-tag">
+                                {tech}
+                              </span>
+                            ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
 
             {/* Add empty slots if needed on the last page */}
             {Array.from({ length: emptySlots }).map((_, index) => (
@@ -240,3 +298,4 @@ const Project = () => {
 }
 
 export default Project
+

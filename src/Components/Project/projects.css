@@ -59,6 +59,7 @@
   width: 100%;
   height: 180px;
   overflow: hidden;
+  background-color: #000; /* Dark background for images */
 }
 
 .project-image img {
@@ -66,10 +67,28 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  image-rendering: -webkit-optimize-contrast; /* Improves image sharpness in Chrome */
+  image-rendering: crisp-edges; /* Improves image sharpness in Firefox */
+  backface-visibility: hidden; /* Prevents blurry text during transitions */
+  transform: translateZ(0); /* Forces GPU acceleration */
+  will-change: transform; /* Hints browser to optimize for changes */
 }
 
+/* Add a subtle overlay to improve text readability over images */
+.project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%);
+  pointer-events: none;
+}
+
+/* Update hover effect to be smoother */
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Reduced from 1.1 for less distortion */
 }
 
 .project-category {
@@ -79,11 +98,13 @@
   background-color: var(--secondary-color);
   color: #000;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700; /* Increased from 600 */
   padding: 5px 10px;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Added shadow for better visibility */
+  z-index: 2; /* Ensure it's above the overlay */
 }
 
 .project-content {
@@ -98,20 +119,70 @@
   font-weight: 700;
   margin-bottom: 10px;
   color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.project-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.project-card:hover .project-title::after {
+  width: 100%;
+}
+
+/* Enhanced description styling */
+.project-description-container {
+  position: relative;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 .project-description {
   font-size: 0.85rem;
   color: #b3b3b3;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  flex: 1;
+  line-height: 1.6;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  text-overflow: ellipsis;
-  max-height: 4.5em; 
+  position: relative;
+  transition: all 0.3s ease;
+  max-height: 4.8em; /* 3 lines */
+  margin-bottom: 5px;
+}
+
+.project-description.expanded {
+  max-height: 500px; /* Large enough to show full content */
+}
+
+.project-description::first-letter {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+.read-more-btn:hover {
+  color: white;
+  transform: translateX(5px);
 }
 
 .project-footer {
@@ -119,6 +190,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
 }
 
 .github-link {
@@ -137,6 +210,7 @@
 .github-link:hover {
   background-color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .github-link i {
@@ -159,8 +233,15 @@
   padding: 4px 8px;
   border-radius: 4px;
   margin-bottom: 4px;
+  transition: all 0.3s ease;
 }
 
+.tech-tag:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Navigation arrows */
 .nav-arrow {
   position: absolute;
   top: 50%;
@@ -194,6 +275,7 @@
   right: 10px;
 }
 
+/* Play/Pause button */
 .play-pause-btn {
   position: absolute;
   top: 15px;
@@ -219,6 +301,7 @@
   color: #000;
 }
 
+/* Progress bar */
 .progress-container {
   width: 100%;
   height: 4px;
@@ -233,6 +316,7 @@
   background-color: var(--secondary-color);
 }
 
+/* Dots navigation */
 .dots-container {
   display: flex;
   justify-content: center;
@@ -270,8 +354,7 @@
 
   .project-description {
     font-size: 0.8rem;
-    -webkit-line-clamp: 2;
-    max-height: 3em; 
+    max-height: 3.2em; /* 2 lines */
   }
 
   .github-link {
@@ -288,4 +371,3 @@
     max-width: 50%;
   }
 }
-
