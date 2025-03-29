@@ -4,41 +4,47 @@
         "title": "Registration System",
         "description": "A simple customer registration system using Laravel framework. It includes user Registration, Temporary Delete, Restore, Search and Delete functionality.",
         "codeLink": "https://github.com/callmesohaib/Laravel-Project",
-        "category": "Backend"
+        "category": "Backend",
+        "technologies": ["Laravel", "PHP", "MySQL"]
     },
     {
         "img": "brightMind.webp",
         "title": "Quiz Application",
         "description": "A Quiz Web Application using ASP.NET Framework. It includes Crud Operations for Teacher and Quiz taking for students.",
         "codeLink": "https://github.com/callmesohaib/Laravel-Project",
-        "category": "Backend"
+        "category": "Backend",
+        "technologies": ["ASP.NET", "C#", "SQL Server"]
     },
     {
         "img": "instaclone.webp",
         "title": "Instagram Clone",
         "description": "Instagram Clone using Laravel framework. It includes Login, Signup, Logout, Posting Images and Comments, Delete posts and Modification of the Profile functionality.",
         "codeLink": "https://github.com/callmesohaib/InstaPosts",
-        "category": "Backend"
+        "category": "Backend",
+        "technologies": ["Laravel", "PHP", "MySQL"]
     },
     {
         "img": "twitterClone.webp",
         "title": "Twitter Clone",
         "description": "I developed a Twitter clone as part of my web development projects to demonstrate my skills in front-end design and implementation.",
         "codeLink": "https://github.com/callmesohaib/TwitterClone",
-        "category": "Frontend"
+        "category": "Frontend",
+        "technologies": ["React", "CSS", "JavaScript"]
     },
     {
         "img": "solo-tech.webp",
         "title": "Solo-Tech ",
         "description": "Fully functional website for Tech Company using MernStack. There are multiple of features like Login, Register, Logout and many others related to any tech company.",
         "codeLink": "https://github.com/callmesohaib/Backend-Solo-Tech",
-        "category": "Backend"
+        "category": "Backend",
+        "technologies": ["MernStack"]
     },
     {
         "img": "DAA.webp",
         "title": "Code Analysis",
         "description": "Analyzing the Relations and finding the Runtime using Master, Extended Master and Muster Theorems.",
         "codeLink": "https://github.com/callmesohaib/Code-Analysis",
-        "category": "Coding"
+        "category": "Coding",
+        "technologies": ["Algorithms", "C++"]
     }
 ]
