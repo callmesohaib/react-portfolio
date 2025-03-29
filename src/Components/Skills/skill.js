@@ -18,7 +18,20 @@ const Skill = () => {
   }, []);
 
   const toggleShowMore = () => {
-    setShowMore(!showMore);
+    const newShowMore = !showMore;
+    setShowMore(newShowMore);
+    
+    if (!newShowMore) {
+      setTimeout(() => {
+        const skillsSection = document.getElementById("skills");
+        if (skillsSection) {
+          skillsSection.scrollIntoView({ 
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -26,8 +39,7 @@ const Skill = () => {
       <div className="skills-header">
         <h2 className="heading">
           <i className="bx bx-library lib"></i>
-          <span>Skills &</span>
-          <span className="highlight">Expertise</span>
+          <span>Skills & <span className="highlight">Expertise</span></span>
         </h2>
         <p className="subheading">Technologies I work with</p>
       </div>
