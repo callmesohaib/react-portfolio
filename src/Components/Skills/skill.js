@@ -3,19 +3,29 @@ import skillData from "../../Json/skill.json";
 import "./skill.css";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-
 const Skill = () => {
   const [skills, setSkills] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     setSkills(skillData);
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      setVisibleCount(mobile ? (showMore ? skillData.length : 6) : skillData.length);
+    };
+    
+    setReduceMotion(
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    );
+    
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  }, [showMore]);
 
   const toggleShowMore = () => {
     const newShowMore = !showMore;
@@ -40,6 +50,16 @@ const Skill = () => {
     }
   };
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: isMobile ? 0.05 : 0.1,
+      }
+    }
+  };
+
   return (
     <section className="skills" id="skills">
       <div className="skills-header">
@@ -51,28 +71,44 @@ const Skill = () => {
       </div>
       
       <div className="skills-container">
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
+        <motion.div
+          variants={reduceMotion ? {} : staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: isMobile ? 0.1 : 0.2 }}
+          className="skills-grid"
+        >
+          {skills.slice(0, visibleCount).map((skill, index) => (
             <motion.div
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView="show"
-              whileHover={{ scale: 1.05, opacity: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
+              variants={reduceMotion ? {} : fadeIn("up", 0.2)}
+              initial={reduceMotion ? false : "hidden"}
+              whileInView={reduceMotion ? false : "show"}
+              whileHover={isMobile || reduceMotion ? {} : { scale: 1.05, opacity: 1 }}
+              viewport={{ once: false, amount: isMobile ? 0.1 : 0.2 }}
+              transition={{ 
+                type: "tween",
+                ease: "easeOut",
+                duration: isMobile ? 0.3 : 0.5
+              }}
               key={index}
-              className={`skill-card ${
-                (index >= 6 && !showMore && isMobile) ? "hidden" : "visible"
-              }`}
+              className="skill-card"
             >
               <div className="skill-inner">
                 <div className="skill-icon">
-                  <img src={skill.icon} alt={skill.name} loading="lazy" />
+                  <img 
+                    src={skill.icon} 
+                    alt={skill.name} 
+                    loading="lazy"
+                    decoding="async"
+                    width="36"
+                    height="36"
+                  />
                 </div>
                 <span className="skill-name">{skill.name}</span>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         {(isMobile && skills.length > 6) && (
           <button className="show-more-btn" onClick={toggleShowMore}>
@@ -84,5 +120,4 @@ const Skill = () => {
     </section>
   );
 };
-
 export default Skill;
