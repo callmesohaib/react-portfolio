@@ -7,65 +7,60 @@ import { fadeIn } from "../../variants";
 const Skill = () => {
   const [skills, setSkills] = useState([]);
   const [showMore, setShowMore] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setSkills(skillData);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const showMoreSkills = () => setShowMore(true);
-  const showLessSkills = () => {
-    setShowMore(false);
-    scrollToSkillsSection();
-  };
-
-  const scrollToSkillsSection = () => {
-    const skillsSection = document.getElementById("skills");
-    const offset = -80;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = skillsSection.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition + offset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
   };
 
   return (
     <section className="skills" id="skills">
-      <h2 className="heading">
-        <i class="bx bx-library lib"></i>
-        Skills & Abilities
-      </h2>
-      <div className="container">
-        <div className="row" id="skillsContainer">
+      <div className="skills-header">
+        <h2 className="heading">
+          <i className="bx bx-library lib"></i>
+          <span>Skills &</span>
+          <span className="highlight">Expertise</span>
+        </h2>
+        <p className="subheading">Technologies I work with</p>
+      </div>
+      
+      <div className="skills-container">
+        <div className="skills-grid">
           {skills.map((skill, index) => (
             <motion.div
-              variants={fadeIn("left", 0.2)}
+              variants={fadeIn("up", 0.2)}
               initial="hidden"
               whileInView="show"
-              style={{ opacity: 0.5 }}
-              viewport={{ once: false, amount: 0.7 }}
+              whileHover={{ scale: 1.05, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
               key={index}
-              className={`bar ${
-                index >= 6 && !showMore ? "hidden" : "visible"
+              className={`skill-card ${
+                (index >= 6 && !showMore && isMobile) ? "hidden" : "visible"
               }`}
             >
-              <div className="info">
-                <img src={skill.icon} alt="skill" />
-                <span>{skill.name}</span>
+              <div className="skill-inner">
+                <div className="skill-icon">
+                  <img src={skill.icon} alt={skill.name} loading="lazy" />
+                </div>
+                <span className="skill-name">{skill.name}</span>
               </div>
             </motion.div>
           ))}
         </div>
-        {!showMore ? (
-          <div className="btn skill-show" onClick={showMoreSkills}>
-            Show more
-          </div>
-        ) : (
-          <div className="btn skill-less" onClick={showLessSkills}>
-            Show less
-          </div>
+        
+        {(isMobile && skills.length > 6) && (
+          <button className="show-more-btn" onClick={toggleShowMore}>
+            {showMore ? 'Show Less' : 'Show More'}
+            <i className={`bx bx-chevron-${showMore ? 'up' : 'down'}`}></i>
+          </button>
         )}
       </div>
     </section>
