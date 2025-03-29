@@ -16,21 +16,21 @@ const Project = () => {
   const [imagesLoaded, setImagesLoaded] = useState({})
   const imageRefs = useRef({})
 
-  // Determine how many slides to show based on screen size
+  
   const slidesToShow = isMobile ? 1 : 3
 
   useEffect(() => {
-    // Set projects from data
+    
     setProjects(projectData)
 
-    // Check if mobile on initial load
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
 
     checkMobile()
 
-    // Add resize listener
+    
     window.addEventListener("resize", checkMobile)
 
     return () => {
@@ -38,7 +38,7 @@ const Project = () => {
     }
   }, [])
 
-  // Preload images for better quality
+  
   useEffect(() => {
     projects.forEach((project, index) => {
       if (!imagesLoaded[index]) {
@@ -55,50 +55,50 @@ const Project = () => {
     })
   }, [projects, imagesLoaded])
 
-  // Calculate total number of pages
+  
   const totalPages = Math.ceil(projects.length / slidesToShow)
 
-  // Calculate current page
+  
   const currentPage = Math.floor(currentIndex / slidesToShow)
 
-  // Calculate max index (last valid starting index)
+  
   const maxIndex = Math.max(0, Math.floor(projects.length / slidesToShow) * slidesToShow)
 
-  // Modified to advance by slidesToShow
+  
   const nextSlide = useCallback(() => {
     setDirection(1)
     setCurrentIndex((prevIndex) => {
       const nextIndex = prevIndex + slidesToShow
       return nextIndex >= projects.length ? 0 : nextIndex
     })
-    // Reset expanded descriptions when changing slides
+    
     setExpandedDescriptions({})
   }, [projects.length, slidesToShow])
 
-  // Modified to go back by slidesToShow
+  
   const prevSlide = useCallback(() => {
     setDirection(-1)
     setCurrentIndex((prevIndex) => {
       const prevPage = Math.floor(prevIndex / slidesToShow) - 1
       return prevPage < 0 ? maxIndex : prevPage * slidesToShow
     })
-    // Reset expanded descriptions when changing slides
+    
     setExpandedDescriptions({})
   }, [maxIndex, slidesToShow])
 
-  // Modified to go to specific page
+  
   const goToSlide = useCallback(
     (pageIndex) => {
       const targetIndex = pageIndex * slidesToShow
       setDirection(targetIndex > currentIndex ? 1 : -1)
       setCurrentIndex(targetIndex)
-      // Reset expanded descriptions when changing slides
+      
       setExpandedDescriptions({})
     },
     [currentIndex, slidesToShow],
   )
 
-  // Toggle description expansion
+  
   const toggleDescription = (projectIndex) => {
     setExpandedDescriptions((prev) => ({
       ...prev,
@@ -106,14 +106,14 @@ const Project = () => {
     }))
   }
 
-  // Auto-slide functionality
+  
   useEffect(() => {
     let interval
 
     if (isPlaying && !isHovering) {
       interval = setInterval(() => {
         nextSlide()
-      }, 5000) // Change slide every 5 seconds
+      }, 5000) 
     }
 
     return () => {
@@ -121,14 +121,14 @@ const Project = () => {
     }
   }, [isPlaying, isHovering, nextSlide])
 
-  // Get visible projects based on current index and slides to show
+  
   const visibleProjects = projects.slice(currentIndex, Math.min(currentIndex + slidesToShow, projects.length))
 
-  // If we're on the last page and don't have enough projects to fill the page,
-  // we need to pad with empty slots
+  
+  
   const emptySlots = currentIndex + slidesToShow > projects.length ? currentIndex + slidesToShow - projects.length : 0
 
-  // Animation variants
+  
   const sliderVariants = {
     initial: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
@@ -164,7 +164,7 @@ const Project = () => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        {/* Navigation Arrows */}
+        {}
         <button onClick={prevSlide} className="nav-arrow nav-arrow-left" aria-label="Previous slide">
           <i className="fa-solid fa-chevron-left"></i>
         </button>
@@ -173,7 +173,7 @@ const Project = () => {
           <i className="fa-solid fa-chevron-right"></i>
         </button>
 
-        {/* Play/Pause Button */}
+        {}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
           className="play-pause-btn"
@@ -182,10 +182,10 @@ const Project = () => {
           {isPlaying ? <i className="fa-solid fa-pause"></i> : <i className="fa-solid fa-play"></i>}
         </button>
 
-        {/* Slider */}
+        {}
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
-            key={currentPage} // Use page index as key instead of currentIndex
+            key={currentPage} 
             custom={direction}
             variants={sliderVariants}
             initial="initial"
@@ -262,14 +262,14 @@ const Project = () => {
               )
             })}
 
-            {/* Add empty slots if needed on the last page */}
+            {}
             {Array.from({ length: emptySlots }).map((_, index) => (
               <div key={`empty-${index}`} className="project empty"></div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* Progress Bar */}
+        {}
         <div className="progress-container">
           <motion.div
             className="progress-bar"
@@ -281,7 +281,7 @@ const Project = () => {
           />
         </div>
 
-        {/* Dots Navigation - now based on pages, not individual slides */}
+        {}
         <div className="dots-container">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button

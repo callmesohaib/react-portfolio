@@ -23,11 +23,17 @@ const Skill = () => {
     
     if (!newShowMore) {
       setTimeout(() => {
-        const skillsSection = document.getElementById("skills");
-        if (skillsSection) {
-          skillsSection.scrollIntoView({ 
-            behavior: "smooth",
-            block: "start"
+        const skillsHeader = document.querySelector(".skills-header");
+        if (skillsHeader) {
+          const offset = 125; 
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = skillsHeader.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
           });
         }
       }, 100);
