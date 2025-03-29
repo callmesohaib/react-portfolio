@@ -11,7 +11,7 @@
         "img": "brightMind.webp",
         "title": "Quiz Application",
         "description": "A Quiz Web Application using ASP.NET Framework. It includes Crud Operations for Teacher and Quiz taking for students.",
-        "codeLink": "https://github.com/callmesohaib/Laravel-Project",
+        "codeLink": "https://github.com/callmesohaib/Quiz-Management",
         "category": "Backend",
         "technologies": ["ASP.NET", "C#", "SQL Server"]
     },
