@@ -440,6 +440,10 @@
     width: 6px;
     height: 6px;
   }
+  .categories-nav{
+    display: flex;
+    justify-content: left;
+  }
 
   .category-tab {
     padding: 0.5rem 1rem;

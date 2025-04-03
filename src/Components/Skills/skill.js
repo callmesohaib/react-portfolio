@@ -6,7 +6,7 @@ import skillsData from "../../Json/skill.json"
 
 export default function SkillsSection() {
   const [skills, setSkills] = useState([])
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("Backend") 
   const [categories, setCategories] = useState([])
   const [hoveredSkill, setHoveredSkill] = useState(null)
   const containerRef = useRef(null)
@@ -14,8 +14,8 @@ export default function SkillsSection() {
   useEffect(() => {
     setSkills(skillsData)
 
-    // Extract unique categories
-    const uniqueCategories = ["All", ...new Set(skillsData.map((skill) => skill.category))]
+    // Extract unique categories (removed "All")
+    const uniqueCategories = [...new Set(skillsData.map((skill) => skill.category))]
     setCategories(uniqueCategories)
 
     // Initialize particles
@@ -27,7 +27,6 @@ export default function SkillsSection() {
       if (canvas) canvas.remove()
     }
   }, [])
-
   const initParticles = () => {
     const canvas = document.createElement("canvas")
     canvas.id = "skill-particles"
@@ -88,7 +87,6 @@ export default function SkillsSection() {
     }
   }
 
-  const filteredSkills = activeCategory === "All" ? skills : skills.filter((skill) => skill.category === activeCategory)
 
   const handleMouseMove = (e) => {
     if (!containerRef.current) return
@@ -114,6 +112,10 @@ export default function SkillsSection() {
       }
     })
   }
+
+  // ... keep all other functions the same (initParticles, handleMouseMove) ...
+
+  const filteredSkills = skills.filter((skill) => skill.category === activeCategory) // Removed "All" check
 
   return (
     <section className="skills-section" id="skills">
@@ -184,5 +186,4 @@ export default function SkillsSection() {
       </div>
     </section>
   )
-}
-
+} 
