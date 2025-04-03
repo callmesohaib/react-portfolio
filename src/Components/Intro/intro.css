@@ -347,8 +347,8 @@
 }
 
 .mobile-img {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--secondary-color);
@@ -659,6 +659,10 @@
     font-size: 1rem;
   }
 
+  .image-badge.bottom{
+    left: -6%;
+    bottom: 20%;
+  }
   .badge-text {
     font-size: 0.7rem;
   }
