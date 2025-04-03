@@ -1,6 +1,6 @@
 :root {
   --secondary-color: #f59e0b;
-  --bg-color: #0f0f0f;
+  --backg-color: #00000000;
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
@@ -10,8 +10,8 @@
 
 #education {
   position: relative;
-  background-color: var(--bg-color);
-  padding: 8rem 0;
+  background-color: var(--backg-color);
+  padding: 2rem 0;
   overflow: hidden;
   width: 100%;
 }

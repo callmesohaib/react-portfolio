@@ -432,8 +432,9 @@
   }
   
   .form-container {
-    padding: 1.5rem;
-  }
+    width: 118%;
+    padding: 1rem;
+    margin-left: -1.5rem;  }
   
   .form-submit {
     width: 100%;
