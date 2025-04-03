@@ -443,7 +443,8 @@
 
 @media screen and (max-width: 576px) {
   .education-heading {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    margin-left: -1rem;
   }
 
   .cap {
@@ -451,22 +452,20 @@
   }
 
   .timeline-line {
-    left: 1rem;
+    left: 0rem;
+
   }
 
   .timeline-dot {
-    left: 0.5rem;
+    left: -0.5rem;
   }
 
   .education-card {
-    padding-left: 2.5rem !important;
+    padding-left: 1rem !important;
   }
 
   .year-marker {
     display: none;
-    /* left: 1rem;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.8rem; */
   }
   .year2{
     display: none;
