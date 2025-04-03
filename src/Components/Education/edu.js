@@ -170,10 +170,7 @@ const Education = () => {
                 <div className="education-card-content">
                   <h3 className="education-card-title">Bab-e-Arqam Model High School</h3>
                   <p className="education-card-program">Science</p>
-                  <p className="education-card-description">
-                    Completed my high school education with a focus on scientific disciplines, building a strong
-                    foundation for my future academic pursuits.
-                  </p>
+                 
                   <div className="education-card-details">
                     <div className="education-card-date">
                       <i className="bx bx-calendar"></i>
@@ -200,10 +197,7 @@ const Education = () => {
                 <div className="education-card-content">
                   <h3 className="education-card-title">Punjab Group of Colleges</h3>
                   <p className="education-card-program">Pre-Engineering</p>
-                  <p className="education-card-description">
-                    Pursued pre-engineering studies, focusing on mathematics, physics, and other technical subjects that
-                    prepared me for my engineering degree.
-                  </p>
+                  
                   <div className="education-card-details">
                     <div className="education-card-date">
                       <i className="bx bx-calendar"></i>
@@ -230,10 +224,7 @@ const Education = () => {
                 <div className="education-card-content">
                   <h3 className="education-card-title">University of Engineering and Technology</h3>
                   <p className="education-card-program">BS Computer Science</p>
-                  <p className="education-card-description">
-                    Currently pursuing my Bachelor's degree in Computer Science, where I'm developing expertise in
-                    programming, algorithms, software development, and other key areas of computing.
-                  </p>
+                 
                   <div className="education-card-details">
                     <div className="education-card-date">
                       <i className="bx bx-calendar"></i>

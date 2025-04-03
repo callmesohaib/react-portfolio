@@ -446,6 +446,9 @@
     font-size: 1.2rem;
     margin-left: -1rem;
   }
+  .education-container{
+    padding: 0 1rem;
+  }
 
   .cap {
     font-size: 1.75rem;
