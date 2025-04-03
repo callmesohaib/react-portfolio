@@ -5,7 +5,7 @@ import "./intro.css";
 import { Link } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import CV from "../../CV.pdf";
+import CV from "../../CV.pdf?url";
 import sohaibImage from "../../assests/Mehndi.JPG";
 
 const Intro = () => {
@@ -144,7 +144,7 @@ const Intro = () => {
 
             <motion.div className="intro-stats" variants={itemVariants}>
               <div className="stat">
-                <span className="stat-number">3+</span>
+                <span className="stat-number">2+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-divider"></div>
@@ -160,7 +160,7 @@ const Intro = () => {
             </motion.div>
 
             <motion.div className="intro-actions" variants={itemVariants}>
-              <a href={CV} download="Sohaib-CV.pdf" className="btn btn-primary">
+              <a href={CV} download="Sohaib_CV.pdf" className="btn btn-primary">
                 Download Resume
                 <svg
                   width="14"
