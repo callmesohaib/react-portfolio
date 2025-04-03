@@ -1,42 +1,62 @@
 [
     {
-        "name": "Mongo Db",
-        "icon": "https://img.icons8.com/color/48/mongo-db.png"
+      "name": "MongoDB",
+      "icon": "https://img.icons8.com/color/48/mongo-db.png",
+      "category": "Backend",
+      "proficiency": 85
     },
     {
-        "name": "ExpressJs",
-        "icon": "https://img.icons8.com/nolan/64/express-js.png"
+      "name": "ExpressJS",
+      "icon": "https://img.icons8.com/nolan/64/express-js.png",
+      "category": "Backend",
+      "proficiency": 80
     },
     {
-        "name": "React",
-        "icon": "https://img.icons8.com/officel/200/react.png"
+      "name": "React",
+      "icon": "https://img.icons8.com/officel/200/react.png",
+      "category": "Frontend",
+      "proficiency": 90
     },
     {
-        "name": "NodeJS",
-        "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
+      "name": "NodeJS",
+      "icon": "https://img.icons8.com/color/48/000000/nodejs.png",
+      "category": "Backend",
+      "proficiency": 85
     },
     {
-        "name": "Laravel",
-        "icon": "https://img.icons8.com/arcade/64/laravel.png"
+      "name": "Laravel",
+      "icon": "https://img.icons8.com/arcade/64/laravel.png",
+      "category": "Backend",
+      "proficiency": 75
     },
     {
-        "name": "php",
-        "icon": "https://img.icons8.com/external-those-icons-flat-those-icons/100/external-PHP-programming-and-development-those-icons-flat-those-icons.png"
+      "name": "PHP",
+      "icon": "https://img.icons8.com/external-those-icons-flat-those-icons/100/external-PHP-programming-and-development-those-icons-flat-those-icons.png",
+      "category": "Backend",
+      "proficiency": 70
     },
     {
-        "name": "GitHub",
-        "icon": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-github-community-for-software-building-and-testing-online-logo-shadow-tal-revivo.png"
+      "name": "GitHub",
+      "icon": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-github-community-for-software-building-and-testing-online-logo-shadow-tal-revivo.png",
+      "category": "Tools",
+      "proficiency": 90
     },
     {
-        "name": "Bootstrap",
-        "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
+      "name": "Bootstrap",
+      "icon": "https://img.icons8.com/color/48/000000/bootstrap.png",
+      "category": "Frontend",
+      "proficiency": 85
     },
     {
-        "name": "Tailwind CSS",
-        "icon": "https://img.icons8.com/color/48/tailwind_css.png"
-    },   
+      "name": "Tailwind CSS",
+      "icon": "https://img.icons8.com/color/48/tailwind_css.png",
+      "category": "Frontend",
+      "proficiency": 90
+    },
     {
-        "name": "Python",
-        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+      "name": "Python",
+      "icon": "https://img.icons8.com/color/48/000000/python--v1.png",
+      "category": "Languages",
+      "proficiency": 75
     }
-]
+  ]
