@@ -1,5 +1,5 @@
 .pro {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .slider-container {
@@ -10,6 +10,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   padding: 2rem 1rem;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .projects {
@@ -76,13 +77,17 @@
 
 /* Add a subtle overlay to improve text readability over images */
 .project-image::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 40%
+  );
   pointer-events: none;
 }
 
@@ -103,7 +108,7 @@
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Added shadow for better visibility */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Added shadow for better visibility */
   z-index: 2; /* Ensure it's above the overlay */
 }
 

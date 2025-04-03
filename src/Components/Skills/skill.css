@@ -1,10 +1,11 @@
 :root {
-  --secondary-color: #f59e0b; /* Assuming this is the accent color from your project section */
+  --secondary-color: #f59e0b; 
 }
 
 .skills-section {
-  padding: 8rem 0;
-  background-color: rgba(0, 0, 0, 0.2); /* Matching the slider-container background */
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+  background-color: black;
   position: relative;
   overflow: hidden;
   color: white;
@@ -30,7 +31,7 @@
 
 .skills-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -66,7 +67,7 @@
 }
 
 .section-subtitle {
-  color: #b3b3b3; /* Matching the project description color */
+  color: #b3b3b3; 
   font-size: 1.25rem;
   max-width: 700px;
   margin: 0 auto;
@@ -147,9 +148,9 @@
   width: 180px;
   height: 180px;
   position: relative;
-  background-color: #1a1a1a; /* Matching project-card background */
+  background-color: #1a1a1a;
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Matching project-card shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease;
   opacity: 0;
   animation: fadeInScale 0.6s ease forwards;
@@ -174,8 +175,8 @@
 }
 
 .skill-hexagon:hover {
-  transform: translateY(-5px); /* Matching project-card hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Matching project-card hover shadow */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); 
   z-index: 10;
 }
 
@@ -206,7 +207,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(245, 158, 11, 0.2); /* Using var(--secondary-color) */
+  background: rgba(245, 158, 11, 0.2); 
   border-radius: 50%;
   filter: blur(10px);
   z-index: -1;

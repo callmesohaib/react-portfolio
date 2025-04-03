@@ -14,15 +14,15 @@ export default function SkillsSection() {
   useEffect(() => {
     setSkills(skillsData)
 
-    // Extract unique categories (removed "All")
+    
     const uniqueCategories = [...new Set(skillsData.map((skill) => skill.category))]
     setCategories(uniqueCategories)
 
-    // Initialize particles
+    
     initParticles()
 
     return () => {
-      // Clean up particles if needed
+      
       const canvas = document.getElementById("skill-particles")
       if (canvas) canvas.remove()
     }
@@ -47,7 +47,7 @@ export default function SkillsSection() {
       resizeCanvas()
       window.addEventListener("resize", resizeCanvas)
 
-      // Create particles
+      
       for (let i = 0; i < 50; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -59,7 +59,7 @@ export default function SkillsSection() {
         })
       }
 
-      // Animate particles
+      
       const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -69,11 +69,11 @@ export default function SkillsSection() {
           ctx.fillStyle = particle.color
           ctx.fill()
 
-          // Move particles
+          
           particle.x += particle.speedX
           particle.y += particle.speedY
 
-          // Wrap around edges
+          
           if (particle.x < 0) particle.x = canvas.width
           if (particle.x > canvas.width) particle.x = 0
           if (particle.y < 0) particle.y = canvas.height
@@ -95,7 +95,7 @@ export default function SkillsSection() {
     const x = (e.clientX - left) / width - 0.5
     const y = (e.clientY - top) / height - 0.5
 
-    // Apply perspective effect to cards
+    
     const cards = document.querySelectorAll(".skill-hexagon")
     cards.forEach((card) => {
       const cardX = (card.getBoundingClientRect().left - left) / width - 0.5
@@ -113,18 +113,18 @@ export default function SkillsSection() {
     })
   }
 
-  // ... keep all other functions the same (initParticles, handleMouseMove) ...
+  
 
-  const filteredSkills = skills.filter((skill) => skill.category === activeCategory) // Removed "All" check
+  const filteredSkills = skills.filter((skill) => skill.category === activeCategory) 
 
   return (
     <section className="skills-section" id="skills">
       <div className="skills-container">
         <div className="skills-header">
           <div className="title-glow"></div>
-          <h2 className="section-title">
+          <h2 className="heading">
             <span className="title-icon">{"<"}</span>
-            Skills & Expertise
+            Skills <span className="title-icon">&</span>  Expertise
             <span className="title-icon">{"/>"}</span>
           </h2>
           <p className="section-subtitle">My Technical Toolkit</p>
