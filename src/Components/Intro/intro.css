@@ -343,7 +343,6 @@
   height: 100%;
   object-fit: cover; /* This will cover the area while maintaining aspect ratio */
   border-radius: 50%; /* Circular image */
-  border: 3px solid var(--secondary-color);
 }
 
 .mobile-img {
@@ -382,10 +381,9 @@
   border-radius: 50px;
   padding: 0.5rem 1rem;
   backdrop-filter: blur(10px);
-  z-index: 4; /* Higher than image container */
+  z-index: 4; 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   animation: pulse 3s infinite;
-  /* Remove any positioning that might be constraining it */
 }
 
 
@@ -659,7 +657,7 @@
     scale: 1.4;
   }
   .badge-icon {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .image-badge.bottom{
@@ -667,7 +665,7 @@
     bottom: 20%;
   }
   .badge-text {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 }
 
