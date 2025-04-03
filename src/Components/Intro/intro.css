@@ -317,18 +317,19 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease;
+  /* Remove overflow: hidden from here */
 }
-
 .image-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 80%; /* Reduce width to allow space for badges */
+  height: 80%; /* Reduce height to allow space for badges */
+  margin: 0 auto; /* Center the container */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .image-container img {
@@ -338,9 +339,11 @@
 }
 
 .desktop-img {
-  object-fit: contain;
+  width: 100%;
   height: 100%;
-  border-radius: 10px;
+  object-fit: cover; /* This will cover the area while maintaining aspect ratio */
+  border-radius: 50%; /* Circular image */
+  border: 3px solid var(--secondary-color);
 }
 
 .mobile-img {
@@ -353,13 +356,15 @@
 
 .image-decoration {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
   z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
-
 .decoration-svg {
   width: 100%;
   height: 100%;
@@ -377,19 +382,21 @@
   border-radius: 50px;
   padding: 0.5rem 1rem;
   backdrop-filter: blur(10px);
-  z-index: 3;
+  z-index: 4; /* Higher than image container */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   animation: pulse 3s infinite;
+  /* Remove any positioning that might be constraining it */
 }
 
+
 .image-badge.top {
-  top: 10%;
-  right: 0;
+  top: 5%; /* Position outside the circle */
+  right: 5%;
 }
 
 .image-badge.bottom {
-  bottom: 15%;
-  left: 0;
+  bottom: 20%; /* Position outside the circle */
+  left: 5%;
 }
 
 .badge-icon {
