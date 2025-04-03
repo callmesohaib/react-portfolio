@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import "./contact.css"
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import "./contact.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,90 +12,102 @@ const Contact = () => {
     email: "",
     phone: "",
     subject: "",
-    desc: "",
-  })
+    message: "",
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formErrors, setFormErrors] = useState({})
-  const [isFormValid, setIsFormValid] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   useEffect(() => {
     // Basic validation
-    const errors = {}
+    const errors = {};
     if (formData.name && formData.name.length < 2) {
-      errors.name = "Name must be at least 2 characters"
+      errors.name = "Name must be at least 2 characters";
     }
     if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Please enter a valid email"
+      errors.email = "Please enter a valid email";
     }
-    if (formData.phone && !/^[0-9]{10,15}$/.test(formData.phone.replace(/\D/g, ""))) {
-      errors.phone = "Please enter a valid phone number"
+    if (
+      formData.phone &&
+      !/^[0-9]{10,15}$/.test(formData.phone.replace(/\D/g, ""))
+    ) {
+      errors.phone = "Please enter a valid phone number";
     }
-    if (formData.desc && formData.desc.length < 10) {
-      errors.desc = "Message must be at least 10 characters"
+    if (formData.message && formData.message.length < 5) {
+      errors.message = "Message must be at least 10 characters";
     }
 
-    setFormErrors(errors)
-    setIsFormValid(Object.keys(errors).length === 0)
-  }, [formData])
+    setFormErrors(errors);
+    setIsFormValid(Object.keys(errors).length === 0);
+  }, [formData]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-
-    if (!isFormValid || isSubmitting) return
-
-    setIsSubmitting(true)
-    const toastId = toast.loading("Sending message...")
-
+    e.preventDefault();
+  
+    if (!isFormValid || isSubmitting) return;
+  
+    setIsSubmitting(true);
+    const toastId = toast.loading("Sending message...");
+  
     try {
+      // Create FormData object with a different name
+      const submissionFormData = new FormData();
+      submissionFormData.append('access_key', 'c78a4719-97db-455a-9609-16b7cef884e0');
+      submissionFormData.append('name', formData.name);
+      submissionFormData.append('email', formData.email);
+      submissionFormData.append('phone', formData.phone);
+      submissionFormData.append('subject', formData.subject);
+      submissionFormData.append('message', formData.message);
+  
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: new FormData(e.target),
-      })
-
-      const result = await response.json()
-
+        body: submissionFormData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      const result = await response.json();
+  
       if (result.success) {
         toast.update(toastId, {
           render: "Message sent successfully! I'll get back to you soon.",
           type: "success",
           isLoading: false,
           autoClose: 3000,
-          closeOnClick: true,
-          draggable: true,
-          pauseOnHover: true,
-        })
-
+        });
+        // Reset form
         setFormData({
           name: "",
           email: "",
           phone: "",
           subject: "",
-          desc: "",
-        })
+          message: "",
+        });
       } else {
-        throw new Error("Form submission failed")
+        throw new Error(result.message || "Form submission failed");
       }
     } catch (error) {
+      console.error("Error:", error);
       toast.update(toastId, {
-        render: "Failed to send message. Please try again later.",
+        render: error.message || "Failed to send message. Please try again later.",
         type: "error",
         isLoading: false,
         autoClose: 3000,
-        closeOnClick: true,
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -106,7 +118,7 @@ const Contact = () => {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -115,7 +127,7 @@ const Contact = () => {
       opacity: 1,
       transition: { type: "spring", stiffness: 100 },
     },
-  }
+  };
 
   return (
     <section className="contact" id="contact">
@@ -140,11 +152,19 @@ const Contact = () => {
               Contact <span>Me</span>
             </h2>
           </div>
-          <p className="contact-subtitle">Have a project in mind or want to collaborate? Feel free to reach out!</p>
+          <p className="contact-subtitle">
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
+          </p>
         </motion.div>
 
         <div className="contact-form-container">
-          <motion.div className="contact-info" variants={containerVariants} initial="hidden" animate="visible">
+          <motion.div
+            className="contact-info"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.div className="contact-card" variants={itemVariants}>
               <div className="contact-card-header">
                 <div className="contact-card-icon">
@@ -152,7 +172,9 @@ const Contact = () => {
                 </div>
                 <h3 className="contact-card-title">Location</h3>
               </div>
-              <p className="contact-card-content">Pak Arab Society, Lahore, Pakistan</p>
+              <p className="contact-card-content">
+                Pak Arab Society, Lahore, Pakistan
+              </p>
             </motion.div>
 
             <motion.div className="contact-card" variants={itemVariants}>
@@ -162,11 +184,17 @@ const Contact = () => {
                 </div>
                 <h3 className="contact-card-title">Email</h3>
               </div>
-              <a href="mailto:sohaibikram249@gmail.com" className="contact-card-link">
-              sohaibikram249@gmail.com
+              <a
+                href="mailto:sohaibikram249@gmail.com"
+                className="contact-card-link"
+              >
+                sohaibikram249@gmail.com
               </a>
-              <a href="mailto:sohaibikram621@gmail.com" className="contact-card-link">
-              sohaibikram621@gmail.com
+              <a
+                href="mailto:sohaibikram621@gmail.com"
+                className="contact-card-link"
+              >
+                sohaibikram621@gmail.com
               </a>
             </motion.div>
 
@@ -235,8 +263,17 @@ const Contact = () => {
             <div className="form-container">
               <h3 className="form-title">Send Me a Message</h3>
 
-              <form onSubmit={handleSubmit} autoComplete="off">
-                <input type="hidden" name="access_key" value="c78a4719-97db-455a-9609-16b7cef884e0" />
+              <form onSubmit={handleSubmit} autoComplete="off" method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="c78a4719-97db-455a-9609-16b7cef884e0"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://web3forms.com/success"
+                />
 
                 <div className="form-row">
                   <div className="form-control">
@@ -269,7 +306,7 @@ const Contact = () => {
                 <div className="form-row">
                   <div className="form-control">
                     <input
-                      type="text"
+                      type="tel"
                       name="phone"
                       id="phone"
                       className="form-input"
@@ -277,8 +314,6 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      pattern="[0-9]*"
-                      inputMode="numeric"
                     />
                   </div>
 
@@ -298,18 +333,22 @@ const Contact = () => {
 
                 <div className="form-group">
                   <textarea
-                    name="desc"
-                    id="desc"
+                    name="message" 
+                    id="message"
                     rows="6"
                     className="form-textarea"
                     placeholder="Your Message"
-                    value={formData.desc}
+                    value={formData.message}
                     onChange={handleChange}
                     required
                   ></textarea>
                 </div>
 
-                <button type="submit" className="form-submit" disabled={isSubmitting || !isFormValid}>
+                <button
+                  type="submit"
+                  className="form-submit"
+                  disabled={isSubmitting || !isFormValid}
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <i className="fa-solid fa-paper-plane"></i>
                 </button>
@@ -319,8 +358,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
-
+export default Contact;
