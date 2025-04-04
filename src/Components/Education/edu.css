@@ -220,11 +220,7 @@ body.dark #education {
   margin-bottom: 1rem;
 }
 
-.description {
-  color: var(--color-text-light);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
+
 
 .card-footer {
   margin-top: auto;
@@ -307,7 +303,7 @@ body.dark #education {
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .card-header {

@@ -89,8 +89,6 @@ const educationData = [
     period: "2018 - 2020",
     status: "completed",
     image: schoolImage,
-    description:
-      "Completed secondary education with focus on scientific disciplines, building a strong foundation in mathematics and natural sciences.",
   },
   {
     id: 2,
@@ -99,9 +97,7 @@ const educationData = [
     period: "2020 - 2022",
     status: "completed",
     image: pgcImage,
-    description:
-      "Specialized in pre-engineering curriculum with emphasis on physics, mathematics, and chemistry, preparing for higher education in technical fields.",
-  },
+},
   {
     id: 3,
     institution: "University of Engineering and Technology",
@@ -109,9 +105,7 @@ const educationData = [
     period: "2022 - 2026",
     status: "pursuing",
     image: uetImage,
-    description:
-      "Currently pursuing a Bachelor's degree in Computer Science, focusing on software development, algorithms, and data structures.",
-  },
+},
 ];
 
 const Education = () => {
@@ -187,8 +181,7 @@ const Education = () => {
                     </span>
                   </div>
                 </div>
-                <div className="program">{item.program}</div>
-                <p className="description">{item.description}</p>
+                <div className="program">{item.program}</div>           
                 <div className="card-footer">
                   <div className="date">
                     <CalendarIcon />
