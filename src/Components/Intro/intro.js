@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import CV from "../../CV.pdf?url";
-import sohaibImage from "../../assests/Mehndi.JPG";
+import sohaibImage from "../../assests/intro.JPG";
 
 const Intro = () => {
   const [isDesktop, setIsDesktop] = useState(true);
