@@ -220,7 +220,11 @@ body.dark #education {
   margin-bottom: 1rem;
 }
 
-
+.description {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
 
 .card-footer {
   margin-top: auto;
@@ -296,6 +300,9 @@ body.dark #education {
 @media (max-width: 480px) {
   #education {
     padding: 4rem 0;
+  }
+  .description{
+    display: none;
   }
 
   .container {
