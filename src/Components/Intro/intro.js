@@ -245,6 +245,7 @@ const Intro = () => {
                   <img
                     src={sohaibImage || "/placeholder.svg"}
                     alt="Sohaib Ikram"
+                    loading="lazy"
                     className={isDesktop ? "desktop-img" : "mobile-img"}
                   />
                 </div>
