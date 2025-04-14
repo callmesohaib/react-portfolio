@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import "./edu.css";
-import schoolImage from "../../assests/school.jpeg";
-import pgcImage from "../../assests/pgc.jpg";
-import uetImage from "../../assests/uet.jpg";
+import schoolImage from "../../assests/school.webp";
+import pgcImage from "../../assests/pgc.webp";
+import uetImage from "../../assests/uet.webp";
 
 const GraduationIcon = () => (
   <svg
