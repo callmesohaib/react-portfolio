@@ -22,7 +22,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       const navMenu = document.querySelector(".navMenu");

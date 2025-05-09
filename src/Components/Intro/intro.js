@@ -247,7 +247,7 @@ const Intro = () => {
                         mousePosition.x * 10
                       }deg) rotateX(${-mousePosition.y * 10}deg)`
                     : "none",
-                  willChange: "transform, opacity", // improves animation performance
+                  willChange: "transform, opacity",
                 }}
               >
                 <div className="image-container">
