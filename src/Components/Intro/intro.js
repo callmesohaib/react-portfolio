@@ -10,6 +10,8 @@ import sohaibImage from "../../assests/intro.webp";
 
 const Intro = () => {
   const [isDesktop, setIsDesktop] = useState(true);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const introRef = useRef(null);
   const imageRef = useRef(null);
@@ -226,19 +228,26 @@ const Intro = () => {
           </div>
 
           <div className="intro-right">
-            <div className="intro-image-wrapper">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="intro-image-wrapper"
+            >
               <motion.div
                 className="intro-image"
                 ref={imageRef}
                 initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                animate={isImageLoaded ? { scale: 1, opacity: 1 } : {}}
+                transition={{ duration: 0.8 }}
                 style={{
                   transform: isDesktop
                     ? `perspective(1200px) rotateY(${
                         mousePosition.x * 10
                       }deg) rotateX(${-mousePosition.y * 10}deg)`
                     : "none",
+                  willChange: "transform, opacity", // improves animation performance
                 }}
               >
                 <div className="image-container">
@@ -246,6 +255,8 @@ const Intro = () => {
                     src={sohaibImage || "/placeholder.svg"}
                     alt="Sohaib Ikram"
                     className={isDesktop ? "desktop-img" : "mobile-img"}
+                    onLoad={() => setIsImageLoaded(true)}
+                    loading="lazy"
                   />
                 </div>
 
@@ -290,7 +301,7 @@ const Intro = () => {
                   <span className="badge-text">Problem Solver</span>
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
